@@ -1,0 +1,864 @@
+:root {
+    /* Исходные темные переменные (по умолчанию) */
+    --md-sys-color-primary: #A9C7FF;
+    --md-sys-color-on-primary: #002F67;
+    --md-sys-color-primary-container: #1D477F;
+    --md-sys-color-on-primary-container: #D6E3FF;
+    --md-sys-color-secondary: #C3C5DD;
+    --md-sys-color-on-secondary: #2D3042;
+    --md-sys-color-secondary-container: #434659;
+    --md-sys-color-on-secondary-container: #DFE1F9;
+    --md-sys-color-tertiary: #E2BADA;
+    --md-sys-color-on-tertiary: #442743;
+    --md-sys-color-tertiary-container: #5C3D5A;
+    --md-sys-color-on-tertiary-container: #FFD6F9;
+    --md-sys-color-error: #FFB4AB;
+    --md-sys-color-error-container: #93000A;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-on-error-container: #FFDAD6;
+    --md-sys-color-background: rgba(15, 16, 20, 0.9);
+    --md-sys-color-on-background: #E3E2E9;
+    --md-sys-color-surface: rgba(18, 19, 24, 0.9);
+    --md-sys-color-on-surface: #E3E2E9;
+    --md-sys-color-surface-variant: rgba(45, 46, 54, 0.9);
+    --md-sys-color-on-surface-variant: #C4C6D0;
+    --md-sys-color-outline: #8E9099;
+    --md-sys-color-inverse-on-surface: #1A1B21;
+    --md-sys-color-inverse-surface: #E3E2E9;
+    --md-sys-color-inverse-primary: #3E5F8A;
+    --md-sys-color-shadow: #000000;
+    --md-sys-color-surface-tint: #A9C7FF;
+    --md-sys-color-outline-variant: rgba(45, 46, 54, 0.9);
+    --md-sys-color-scrim: #000000;
+    
+    --sidebar-width: 280px;
+    --content-max-width: 1200px;
+    --shape-corner-extra-small: 4px;
+    --shape-corner-small: 8px;
+    --shape-corner-medium: 12px;
+    --shape-corner-large: 16px;
+    --shape-corner-extra-large: 28px;
+    --shape-corner-full: 9999px;
+    
+    --upvote-color: #FF8B60;
+    --downvote-color: #9494FF;
+    
+    /* Переменные для светлой темы */
+    --light-primary: #2B5F9E;
+    --light-on-primary: #FFFFFF;
+    --light-primary-container: #D6E3FF;
+    --light-on-primary-container: #001C3B;
+    --light-secondary: #5A5D72;
+    --light-on-secondary: #FFFFFF;
+    --light-secondary-container: #DFE1F9;
+    --light-on-secondary-container: #171B2C;
+    --light-tertiary: #775270;
+    --light-on-tertiary: #FFFFFF;
+    --light-tertiary-container: #FFD6F9;
+    --light-on-tertiary-container: #2D122B;
+    --light-error: #BA1A1A;
+    --light-error-container: #FFDAD6;
+    --light-on-error: #FFFFFF;
+    --light-on-error-container: #410002;
+    --light-background: rgba(249, 249, 254, 0.9);
+    --light-on-background: #1A1B21;
+    --light-surface: rgba(255, 255, 255, 0.9);
+    --light-on-surface: #1A1B21;
+    --light-surface-variant: rgba(228, 226, 236, 0.9);
+    --light-on-surface-variant: #46464F;
+    --light-outline: #767680;
+    --light-inverse-on-surface: #F2F0F7;
+    --light-inverse-surface: #2F3038;
+    --light-inverse-primary: #A9C7FF;
+    --light-shadow: #000000;
+    --light-surface-tint: #2B5F9E;
+    --light-outline-variant: rgba(228, 226, 236, 0.9);
+    --light-scrim: #000000;
+}
+
+/* Фон с градиентом для темной темы */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a25 100%);
+    z-index: -1;
+    transition: background 0.5s ease;
+}
+
+/* Светлая тема */
+body.light-theme {
+    --md-sys-color-primary: var(--light-primary);
+    --md-sys-color-on-primary: var(--light-on-primary);
+    --md-sys-color-primary-container: var(--light-primary-container);
+    --md-sys-color-on-primary-container: var(--light-on-primary-container);
+    --md-sys-color-secondary: var(--light-secondary);
+    --md-sys-color-on-secondary: var(--light-on-secondary);
+    --md-sys-color-secondary-container: var(--light-secondary-container);
+    --md-sys-color-on-secondary-container: var(--light-on-secondary-container);
+    --md-sys-color-tertiary: var(--light-tertiary);
+    --md-sys-color-on-tertiary: var(--light-on-tertiary);
+    --md-sys-color-tertiary-container: var(--light-tertiary-container);
+    --md-sys-color-on-tertiary-container: var(--light-on-tertiary-container);
+    --md-sys-color-error: var(--light-error);
+    --md-sys-color-error-container: var(--light-error-container);
+    --md-sys-color-on-error: var(--light-on-error);
+    --md-sys-color-on-error-container: var(--light-on-error-container);
+    --md-sys-color-background: var(--light-background);
+    --md-sys-color-on-background: var(--light-on-background);
+    --md-sys-color-surface: var(--light-surface);
+    --md-sys-color-on-surface: var(--light-on-surface);
+    --md-sys-color-surface-variant: var(--light-surface-variant);
+    --md-sys-color-on-surface-variant: var(--light-on-surface-variant);
+    --md-sys-color-outline: var(--light-outline);
+    --md-sys-color-inverse-on-surface: var(--light-inverse-on-surface);
+    --md-sys-color-inverse-surface: var(--light-inverse-surface);
+    --md-sys-color-inverse-primary: var(--light-inverse-primary);
+    --md-sys-color-shadow: var(--light-shadow);
+    --md-sys-color-surface-tint: var(--light-surface-tint);
+    --md-sys-color-outline-variant: var(--light-outline-variant);
+    --md-sys-color-scrim: var(--light-scrim);
+}
+
+/* Фон с градиентом для светлой темы */
+body.light-theme::before {
+    background: linear-gradient(135deg, #e6e6fa 0%, #d4e0ff 100%);
+}
+
+body {
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.6;
+    font-weight: 400;
+    padding-bottom: 40px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Эффект стекла для элементов */
+.main-header,
+.feature-card,
+.cta-section,
+.support-section {
+    backdrop-filter: blur(12px) brightness(0.8);
+    -webkit-backdrop-filter: blur(12px) brightness(0.8);
+    background-color: var(--md-sys-color-surface) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Для светлой темы уменьшаем размытие и brightness */
+body.light-theme .main-header,
+body.light-theme .feature-card,
+body.light-theme .cta-section,
+body.light-theme .support-section {
+    backdrop-filter: blur(8px) brightness(1);
+    -webkit-backdrop-filter: blur(8px) brightness(1);
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для кнопок */
+.mdc-button--primary {
+    --mdc-theme-primary: var(--md-sys-color-primary) !important;
+    --mdc-theme-on-primary: var(--md-sys-color-on-primary) !important;
+}
+
+/* Стилизованные кнопки */
+.styled-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--shape-corner-medium);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.styled-button.primary {
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
+    color: var(--md-sys-color-on-primary);
+    box-shadow: 0 4px 12px rgba(169, 199, 255, 0.3);
+}
+
+.styled-button.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(169, 199, 255, 0.4);
+}
+
+.styled-button.secondary {
+    background: transparent;
+    color: var(--md-sys-color-primary);
+    border: 1px solid var(--md-sys-color-primary);
+}
+
+.styled-button.secondary:hover {
+    background: rgba(169, 199, 255, 0.1);
+}
+
+.styled-button.accent {
+    background: linear-gradient(135deg, #FF8B60 0%, #FF6B4A 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 139, 96, 0.3);
+}
+
+.styled-button.accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 139, 96, 0.4);
+}
+
+.button-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Хедер */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--md-sys-color-surface);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.mdc-button {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* Выпадающее меню настроек */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 8px;
+    background-color: var(--md-sys-color-surface-variant);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    min-width: 220px;
+    border-radius: var(--shape-corner-medium);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    z-index: 1001;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-content a {
+    color: var(--md-sys-color-on-surface);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    position: relative;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.dropdown-content a .material-symbols-outlined {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #5A5D72;
+    margin: 4px 0;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* Плашка версии внизу */
+.version-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--md-sys-color-surface-variant);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+    z-index: 999;
+}
+
+.version-footer a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.version-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Герой секция */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 0 0 16px 0;
+    color: var(--md-sys-color-primary);
+    font-family: 'Montserrat', 'Russo One', sans-serif;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(169, 199, 255, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 0 40px 0;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Секция функций */
+.features-section {
+    padding: 80px 20px;
+    background: var(--md-sys-color-background);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    color: var(--md-sys-color-primary);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 auto 60px;
+    max-width: 600px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.feature-card {
+    padding: 30px;
+    border-radius: var(--shape-corner-large);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--md-sys-color-primary);
+    margin-bottom: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.feature-description {
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Секция CTA */
+.cta-section {
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: var(--shape-corner-extra-large);
+    margin: 40px 20px;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    color: var(--md-sys-color-primary);
+}
+
+.cta-text {
+    font-size: 1.2rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 auto 40px;
+    max-width: 600px;
+}
+
+/* Секция поддержки авторов */
+.support-section {
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: var(--shape-corner-extra-large);
+    margin: 40px 20px;
+}
+
+.support-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    color: var(--md-sys-color-primary);
+}
+
+.support-text {
+    font-size: 1.1rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 auto 30px;
+    max-width: 600px;
+}
+
+.support-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Футер */
+.footer {
+    padding: 60px 20px 30px;
+    background: var(--md-sys-color-background);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--md-sys-color-primary);
+    margin-bottom: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-description {
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--md-sys-color-on-surface-variant);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--md-sys-color-primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 60px;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.9rem;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 1024px) {
+    /* Планшеты и небольшие экраны */
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-section {
+        padding: 120px 30px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Мобильные устройства */
+    .main-header {
+        padding: 0 12px;
+        height: 60px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .header-actions {
+        gap: 8px;
+    }
+    
+    .mdc-button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Герой секция */
+    .hero-section {
+        padding: 80px 15px 40px;
+        min-height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .styled-button {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 20px;
+    }
+    
+    /* Секции */
+    .features-section,
+    .cta-section,
+    .support-section {
+        padding: 50px 15px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    /* Карточки функций */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+    
+    .feature-title {
+        font-size: 1.3rem;
+    }
+    
+    /* CTA секция */
+    .cta-section,
+    .support-section {
+        margin: 20px 15px;
+        padding: 40px 20px;
+    }
+    
+    .cta-title,
+    .support-title {
+        font-size: 1.8rem;
+    }
+    
+    .support-options {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    /* Футер */
+    .footer {
+        padding: 40px 15px 80px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Выпадающее меню */
+    .dropdown-content {
+        right: -20px;
+        min-width: 280px;
+    }
+    
+    /* Плашка версии */
+    .version-footer {
+        padding: 10px;
+        font-size: 0.75rem;
+    }
+    
+    /* Улучшение читаемости */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Очень маленькие устройства */
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.7rem;
+    }
+    
+    .feature-card {
+        padding: 15px;
+    }
+    
+    .header-actions {
+        gap: 6px;
+    }
+    
+    .mdc-button {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .dropdown-content {
+        right: -10px;
+        min-width: 250px;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        gap: 8px;
+    }
+    
+    .styled-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Стили для тач-устройств */
+@media (hover: none) {
+    .styled-button:hover,
+    .feature-card:hover,
+    .social-link:hover {
+        transform: none;
+    }
+}
+
+/* Оптимизация анимаций для слабых устройств */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .animate {
+        animation: none !important;
+    }
+}
+
+/* Material Symbols optimization */
+.material-symbols-outlined {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
