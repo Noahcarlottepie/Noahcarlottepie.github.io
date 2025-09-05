@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -12,22 +12,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Orbitron:wght@700;800&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Хедер -->
+    <!--меню-->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">SHARK-CONCEPT</div>
+            <button class="mobile-menu-close" id="mobile-menu-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="{{url_for('main')}}" class="mobile-nav-link">
+                <span class="material-symbols-outlined">home</span>
+                Главная
+            </a>
+            <a href="{{url_for('popular')}}" class="mobile-nav-link">
+                <span class="material-symbols-outlined">trending_up</span>
+                Популярное
+            </a>
+            <a href="#" class="mobile-nav-link">
+                <span class="material-symbols-outlined">groups</span>
+                Сообщества
+            </a>
+            <a href="#" class="mobile-nav-link">
+                <span class="material-symbols-outlined">info</span>
+                О нас
+            </a>
+            <div class="mobile-menu-divider"></div>
+            <a href="{{url_for('register')}}" class="mobile-nav-link accent">
+                <span class="material-symbols-outlined">rocket_launch</span>
+                Начать
+            </a>
+        </nav>
+    </div>
+
+    <!--Хедер-->
     <header class="main-header">
         <div class="logo-container">
             <a href="#" class="logo">SHARK-CONCEPT</a>
         </div>
         
         <div class="header-actions">
-            <a href="https://t.me/noah_meu" class="mdc-button mdc-button--raised mdc-button--primary">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="https://t.me/noah_meu" class="mdc-button mdc-button--raised mdc-button--primary header-button">
                 <span class="mdc-button__label">Moderation</span>
             </a>
             <div class="dropdown" id="settings-dropdown">
-                <a href="#" class="mdc-button mdc-button--raised mdc-button--primary" id="settings-button">
+                <a href="" class="mdc-button mdc-button--raised mdc-button--primary header-button" id="settings-button">
                     <span class="mdc-button__label">Settings</span>
                 </a>
                 <div class="dropdown-content">
-                    <a href="#">
+                    <a href="">
                         <span class="material-symbols-outlined">person</span>
                         My Profile
                     </a>
@@ -36,7 +73,7 @@
                         <span class="material-symbols-outlined">dark_mode</span>
                         Night Mode
                     </a>
-                    <a href="#">
+                    <a href="">
                         <span class="material-symbols-outlined">animation</span>
                         Animations
                     </a>
@@ -54,7 +91,7 @@
         </div>
     </header>
 
-    <!-- ГЛ секция -->
+    <!--гл секция-->
     <section class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title animate">Dive Into The Future of Social Networking</h1>
@@ -72,7 +109,7 @@
         </div>
     </section>
 
-    <!-- Секция информации -->
+    <!--Секция информации-->
     <section id="features" class="features-section">
         <h2 class="section-title">Why Choose Shark?</h2>
         <p class="section-subtitle">Discover the features that make Shark the perfect platform for your social experience</p>
@@ -116,7 +153,7 @@
         </div>
     </section>
 
-    <!-- Секция подключения к нам -->
+    <!--Секция подключения к нам-->
     <section class="cta-section">
         <h2 class="cta-title">Ready to Dive In?</h2>
         <p class="cta-text">You will be able to join us soon, with respect, the developer of Sharks!</p>
@@ -126,7 +163,7 @@
         </a>
     </section>
 
-    <!-- Секция поддержки авторов -->
+    <!--Секция поддержки авторов-->
     <section class="support-section">
         <h2 class="support-title">Support the Creators</h2>
         <p class="support-text">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
@@ -146,7 +183,7 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!--Футер-->
     <footer class="footer">
         <div class="footer-grid">
             <div>
@@ -167,18 +204,18 @@
                 <ul class="footer-links">
                     <li><a href="{{url_for('main')}}">Home</a></li>
                     <li><a href="{{url_for('popular')}}">Popular</a></li>
-                    <li><a href="#">Communities</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="">Communities</a></li>
+                    <li><a href="">About Us</a></li>
                 </ul>
             </div>
             
             <div>
                 <h3 class="footer-heading">Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Community Guidelines</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                    <li><a href="">Community Guidelines</a></li>
                 </ul>
             </div>
             
@@ -194,8 +231,7 @@
             &copy; 2025 Shark Social Platform. All rights reserved.
         </div>
     </footer>
-
-    <!-- Плашка версии внизу -->
+    <!--Плашка версии внизу-->
     <div class="version-footer">
         <a href="#">WebSite coming soon</a> • 
         Shark Web V 1.5
@@ -203,18 +239,33 @@
     <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Material Components
     const buttons = document.querySelectorAll('.mdc-button');
     buttons.forEach(button => {
         mdc.ripple.MDCRipple.attachTo(button);
     });
+    //меню
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
     
-    // Анимация появления элементов при скролле
+    function toggleMobileMenu() {
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    }
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenuClose.addEventListener('click', toggleMobileMenu);
+    mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+    //Закрытие меню при клике на ссылки
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', toggleMobileMenu);
+    });
+    //Анимация появления элементов при скролле
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -223,35 +274,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
-    
-    // Наблюдаем за элементами с задержкой анимации
+    //Наблюдаем за элементами с задержкой анимации
     document.querySelectorAll('.feature-card').forEach((card, index) => {
         setTimeout(() => {
             observer.observe(card);
         }, index * 100);
     });
-    
-    // Управление выпадающим меню настроек
+    //Управление выпадающим меню настроек
     const settingsDropdown = document.getElementById('settings-dropdown');
     const settingsButton = document.getElementById('settings-button');
     
     settingsButton.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         settingsDropdown.classList.toggle('show');
     });
-    
-    // Закрытие меню при клике вне его
+    //Закрытие меню при клике вне его
     document.addEventListener('click', (e) => {
         if (!settingsDropdown.contains(e.target)) {
             settingsDropdown.classList.remove('show');
         }
     });
-    
-    // Функция переключения темы
+    //Функция переключения темы
     function toggleTheme() {
         document.body.classList.toggle('light-theme');
         
-        // Обновляем текст кнопки
+        //Обновляем текст кнопки
         const themeButton = document.getElementById('theme-toggle');
         const themeIcon = themeButton.querySelector('.material-symbols-outlined');
         
@@ -263,11 +311,10 @@ document.addEventListener('DOMContentLoaded', () => {
             themeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span>Night Mode';
         }
         
-        // Сохраняем выбор пользователя в localStorage
+        //Сохраняем выбор пользователя
         localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
     }
-    
-    // Обработчик клика по кнопке темы
+    //Обработчик клика по кнопке темы
     const themeButton = document.getElementById('theme-toggle');
     if (themeButton) {
         themeButton.addEventListener('click', function(e) {
@@ -277,13 +324,12 @@ document.addEventListener('DOMContentLoaded', () => {
             settingsDropdown.classList.remove('show');
         });
     }
-    
-    // Проверяем сохраненную тему при загрузке
+    //Проверяем сохраненную тему при загрузке
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
         
-        // Обновляем текст кнопки
+        //Обновляем текст кнопки
         const themeButton = document.getElementById('theme-toggle');
         if (themeButton) {
             const themeIcon = themeButton.querySelector('.material-symbols-outlined');
@@ -291,8 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
             themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
         }
     }
-    
-    // Добавляем обработчики для всех ссылок в выпадающем меню
+    //Добавляем обработчики для всех ссылок в выпадающем меню
     const dropdownLinks = document.querySelectorAll('.dropdown-content a');
     dropdownLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -303,44 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
-    // Оптимизация для мобильных устройств
-    function initMobileFeatures() {
-        // Улучшение работы выпадающего меню на мобильных
-        const dropdown = document.getElementById('settings-dropdown');
-        if (dropdown) {
-            dropdown.addEventListener('touchstart', function(e) {
-                if (e.touches.length > 1) return;
-                this.classList.toggle('show');
-                e.preventDefault();
-            });
-        }
-        
-        // Предотвращение масштабирования при двойном тапе
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-        
-        // Оптимизация анимаций для мобильных
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (prefersReducedMotion.matches) {
-            document.querySelectorAll('.animate').forEach(el => {
-                el.style.animation = 'none';
-            });
-        }
-    }
-    
-    initMobileFeatures();
-    
-    // Добавляем класс для мобильных устройств
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        document.body.classList.add('is-mobile');
-    }
 });
     </script>
 </body>
