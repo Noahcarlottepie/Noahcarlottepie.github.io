@@ -22,26 +22,33 @@
             </button>
         </div>
         <nav class="mobile-nav">
-            <a href="{{url_for('main')}}" class="mobile-nav-link">
-                <span class="material-symbols-outlined">home</span>
-                Главная
+            <!-- Кнопка Moderation -->
+            <a href="https://t.me/noah_meu" target="_blank" class="mobile-nav-link moderation-link">
+                <span class="material-symbols-outlined">shield</span>
+                Moderation
             </a>
-            <a href="{{url_for('popular')}}" class="mobile-nav-link">
-                <span class="material-symbols-outlined">trending_up</span>
-                Популярное
-            </a>
-            <a href="#" class="mobile-nav-link">
-                <span class="material-symbols-outlined">groups</span>
-                Сообщества
-            </a>
-            <a href="#" class="mobile-nav-link">
-                <span class="material-symbols-outlined">info</span>
-                О нас
-            </a>
+            
             <div class="mobile-menu-divider"></div>
-            <a href="{{url_for('register')}}" class="mobile-nav-link accent">
-                <span class="material-symbols-outlined">rocket_launch</span>
-                Начать
+            
+            <!-- Меню настроек -->
+            <a href="#" class="mobile-nav-link" id="mobile-theme-toggle">
+                <span class="material-symbols-outlined">dark_mode</span>
+                Night Mode
+            </a>
+            
+            <a href="#" class="mobile-nav-link">
+                <span class="material-symbols-outlined">animation</span>
+                Animations
+            </a>
+            
+            <a href="https://t.me/sharkfea" target="_blank" class="mobile-nav-link">
+                <span class="material-symbols-outlined">featured_play_list</span>
+                Shark Features
+            </a>
+            
+            <a href="https://t.me/noah_meu" target="_blank" class="mobile-nav-link">
+                <span class="material-symbols-outlined">bug_report</span>
+                Report a Bug
             </a>
         </nav>
     </div>
@@ -243,6 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(button => {
         mdc.ripple.MDCRipple.attachTo(button);
     });
+    
     //меню
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -254,13 +262,16 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuOverlay.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
     }
+    
     mobileMenuToggle.addEventListener('click', toggleMobileMenu);
     mobileMenuClose.addEventListener('click', toggleMobileMenu);
     mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+    
     //Закрытие меню при клике на ссылки
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', toggleMobileMenu);
     });
+    
     //Анимация появления элементов при скролле
     const observerOptions = {
         threshold: 0.1,
@@ -274,12 +285,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
+    
     //Наблюдаем за элементами с задержкой анимации
     document.querySelectorAll('.feature-card').forEach((card, index) => {
         setTimeout(() => {
             observer.observe(card);
         }, index * 100);
     });
+    
     //Управление выпадающим меню настроек
     const settingsDropdown = document.getElementById('settings-dropdown');
     const settingsButton = document.getElementById('settings-button');
@@ -289,41 +302,73 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         settingsDropdown.classList.toggle('show');
     });
+    
     //Закрытие меню при клике вне его
     document.addEventListener('click', (e) => {
         if (!settingsDropdown.contains(e.target)) {
             settingsDropdown.classList.remove('show');
         }
     });
+    
     //Функция переключения темы
     function toggleTheme() {
         document.body.classList.toggle('light-theme');
         
         //Обновляем текст кнопки
         const themeButton = document.getElementById('theme-toggle');
-        const themeIcon = themeButton.querySelector('.material-symbols-outlined');
-        
-        if (document.body.classList.contains('light-theme')) {
-            themeIcon.textContent = 'light_mode';
-            themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
-        } else {
-            themeIcon.textContent = 'dark_mode';
-            themeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span>Night Mode';
+        if (themeButton) {
+            const themeIcon = themeButton.querySelector('.material-symbols-outlined');
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.textContent = 'light_mode';
+                themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
+            } else {
+                themeIcon.textContent = 'dark_mode';
+                themeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span>Night Mode';
+            }
         }
+        
+        //Обновляем иконку в мобильном меню
+        updateMobileThemeIcon();
         
         //Сохраняем выбор пользователя
         localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
     }
+    
+    //Функция для обновления иконки темы в мобильном меню
+    function updateMobileThemeIcon() {
+        const mobileThemeButton = document.getElementById('mobile-theme-toggle');
+        if (!mobileThemeButton) return;
+        
+        const themeIcon = mobileThemeButton.querySelector('.material-symbols-outlined');
+        
+        if (document.body.classList.contains('light-theme')) {
+            themeIcon.textContent = 'light_mode';
+            mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
+        } else {
+            themeIcon.textContent = 'dark_mode';
+            mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span>Night Mode';
+        }
+    }
+    
     //Обработчик клика по кнопке темы
     const themeButton = document.getElementById('theme-toggle');
     if (themeButton) {
         themeButton.addEventListener('click', function(e) {
             e.preventDefault();
             toggleTheme();
-            // Закрываем меню после переключения темы
             settingsDropdown.classList.remove('show');
         });
     }
+    
+    //Обработчик для мобильной кнопки темы
+    const mobileThemeButton = document.getElementById('mobile-theme-toggle');
+    if (mobileThemeButton) {
+        mobileThemeButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleTheme();
+        });
+    }
+    
     //Проверяем сохраненную тему при загрузке
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
@@ -337,17 +382,63 @@ document.addEventListener('DOMContentLoaded', () => {
             themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
         }
     }
+    
+    //Обновляем иконку при загрузке
+    updateMobileThemeIcon();
+    
     //Добавляем обработчики для всех ссылок в выпадающем меню
     const dropdownLinks = document.querySelectorAll('.dropdown-content a');
     dropdownLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Для внутренних ссылок закрываем меню
             if (link.getAttribute('href') === '#' || link.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
                 settingsDropdown.classList.remove('show');
             }
         });
     });
+    
+    // Функция для проверки мобильного устройства
+    function isMobileDevice() {
+        return window.innerWidth <= 768;
+    }
+    
+    // Показываем/скрываем кнопки в зависимости от устройства
+    function toggleHeaderButtons() {
+        const headerButtons = document.querySelectorAll('.header-button');
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (isMobileDevice()) {
+            headerButtons.forEach(btn => btn.style.display = 'none');
+            if (menuToggle) menuToggle.style.display = 'block';
+        } else {
+            headerButtons.forEach(btn => btn.style.display = 'flex');
+            if (menuToggle) menuToggle.style.display = 'none';
+        }
+    }
+    
+    // Вызываем при загрузке и изменении размера окна
+    toggleHeaderButtons();
+    window.addEventListener('resize', toggleHeaderButtons);
+    
+    // Оптимизация для мобильных устройств
+    if (isMobileDevice()) {
+        const observerOptions = {
+            threshold: 0.05,
+            rootMargin: '0px 0px -30px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    }
 });
     </script>
 </body>

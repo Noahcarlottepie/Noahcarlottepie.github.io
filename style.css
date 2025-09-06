@@ -753,3 +753,216 @@ body.light-theme .support-section {
 .delay-3 {
     animation-delay: 0.6s;
 }
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Хедер - сдвигаем кнопки */
+    .header-actions {
+        gap: 12px;
+    }
+    
+    /* Главный текст по центру и уменьшаем */
+    .hero-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0 auto 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    /* Адаптация остальных элементов */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .support-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Показываем кнопку меню на мобильных */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Скрываем десктопные кнопки на мобильных */
+    .header-button {
+        display: none;
+    }
+    
+    /* Адаптация выпадающего меню */
+    .dropdown-content {
+        right: -50px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title,
+    .support-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Еще больше сдвигаем кнопки в хедере */
+    .header-actions {
+        gap: 8px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
+/* Улучшение для мобильных касаний */
+@media (max-width: 768px) {
+    .styled-button,
+    .mobile-nav-link,
+    .footer-links a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Улучшение читаемости на мобильных */
+    body {
+        font-size: 16px; /* Предотвращает масштабирование в iOS */
+    }
+    
+    /* Оптимизация анимаций для мобильных */
+    .feature-card {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+}
+
+/* Дополнительные улучшения для очень маленьких экранов */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
+    }
+    
+    .header-actions {
+        gap: 6px;
+    }
+}
+/* Стили для мобильного меню в стиле десктопного */
+.mobile-settings-menu {
+    background: var(--md-sys-color-surface-variant);
+    border-radius: var(--shape-corner-medium);
+    margin: 10px 0;
+    border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.mobile-settings-header {
+    padding: 16px;
+    font-weight: 600;
+    color: var(--md-sys-color-primary);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.mobile-settings-header .material-symbols-outlined {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+/* Стиль для кнопки Moderation в мобильном меню */
+.mobile-nav-link.moderation-link {
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
+    color: var(--md-sys-color-on-primary);
+    margin: 10px 0;
+}
+
+.mobile-nav-link.moderation-link:hover {
+    background: linear-gradient(135deg, #7BA7FF 0%, var(--md-sys-color-primary) 100%);
+}
+
+/* Анимация для мобильного меню */
+.mobile-menu {
+    backdrop-filter: blur(12px) brightness(0.8);
+    -webkit-backdrop-filter: blur(12px) brightness(0.8);
+    background-color: var(--md-sys-color-surface) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Для светлой темы */
+body.light-theme .mobile-menu {
+    backdrop-filter: blur(8px) brightness(1);
+    -webkit-backdrop-filter: blur(8px) brightness(1);
+    border-left: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Стили для мобильного меню */
+    .mobile-menu {
+        width: 300px;
+    }
+    
+    .mobile-nav-link {
+        padding: 14px 16px;
+        margin: 4px 0;
+    }
+    
+    .mobile-menu-divider {
+        margin: 12px 0;
+    }
+    
+    /* Улучшение касаний */
+    .mobile-nav-link,
+    .mobile-settings-header {
+        min-height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-menu {
+        width: 280px;
+    }
+    
+    .mobile-nav-link {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+}
