@@ -966,3 +966,41 @@ body.light-theme .mobile-menu {
         font-size: 0.95rem;
     }
 }
+        /* Стили для плашек "Coming Soon" */
+        .coming-soon-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #FF8B60 0%, #FF6B4A 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(255, 107, 74, 0.4);
+            white-space: nowrap;
+        }
+        
+        .button-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .disabled-button {
+            pointer-events: none;
+            opacity: 0.7;
+            position: relative;
+        }
+        
+        .disabled-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: var(--shape-corner-medium);
+            z-index: 1;
+        }

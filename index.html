@@ -10,46 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Orbitron:wght@700;800&family=Russo+One&display=swap" rel="stylesheet">
-    <style>
-        /* Стили для плашек "Coming Soon" */
-        .coming-soon-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: linear-gradient(135deg, #FF8B60 0%, #FF6B4A 100%);
-            color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            z-index: 10;
-            box-shadow: 0 2px 8px rgba(255, 107, 74, 0.4);
-            white-space: nowrap;
-        }
-        
-        .button-container {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .disabled-button {
-            pointer-events: none;
-            opacity: 0.7;
-            position: relative;
-        }
-        
-        .disabled-button::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: var(--shape-corner-medium);
-            z-index: 1;
-        }
-    </style>
 </head>
 <body>
     <!--меню-->
@@ -63,7 +23,7 @@
         </div>
         <nav class="mobile-nav">
             <!-- Кнопка Moderation -->
-            <a href="https://t.me/noah_meu" target="_blank" class="mobile-nav-link moderation-link">
+            <a href="https://t.me/noah_commit" target="_blank" class="mobile-nav-link moderation-link">
                 <span class="material-symbols-outlined">shield</span>
                 <span data-lang="ru">Модерация</span>
                 <span data-lang="en">Moderation</span>
@@ -84,13 +44,13 @@
                 <span data-lang="en">Language</span>
             </a>
             
-            <a href="https://t.me/sharkfea" target="_blank" class="mobile-nav-link">
+            <a href="https://t.me/sharkNewsFea" target="_blank" class="mobile-nav-link">
                 <span class="material-symbols-outlined">featured_play_list</span>
-                <span data-lang="ru">Функции Shark</span>
-                <span data-lang="en">Shark Features</span>
+                <span data-lang="ru">Shark Новости</span>
+                <span data-lang="en">Shark News</span>
             </a>
             
-            <a href="https://t.me/noah_meu" target="_blank" class="mobile-nav-link">
+            <a href="https://t.me/noah_commit" target="_blank" class="mobile-nav-link">
                 <span class="material-symbols-outlined">bug_report</span>
                 <span data-lang="ru">Сообщить об ошибке</span>
                 <span data-lang="en">Report a Bug</span>
@@ -108,7 +68,7 @@
             <button class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span class="material-symbols-outlined">menu</span>
             </button>
-            <a href="https://t.me/noah_meu" target="_blank" class="mdc-button mdc-button--raised mdc-button--primary header-button">
+            <a href="https://t.me/noah_commit" target="_blank" class="mdc-button mdc-button--raised mdc-button--primary header-button">
                 <span class="mdc-button__label" data-lang="ru">Модерация</span>
                 <span class="mdc-button__label" data-lang="en">Moderation</span>
             </a>
@@ -134,13 +94,13 @@
                         <span data-lang="ru">Язык</span>
                         <span data-lang="en">Language</span>
                     </a>
-                    <a href="https://t.me/sharkfea" target="_blank">
+                    <a href="https://t.me/sharkNewsFea" target="_blank">
                         <span class="material-symbols-outlined">featured_play_list</span>
                         <span data-lang="ru">Функции Shark</span>
                         <span data-lang="en">Shark Features</span>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="https://t.me/noah_meu" target="_blank">
+                    <a href="https://t.me/noah_commit" target="_blank">
                         <span class="material-symbols-outlined">bug_report</span>
                         <span data-lang="ru">Сообщить об ошибке</span>
                         <span data-lang="en">Report a Bug</span>
@@ -258,12 +218,12 @@
         <p class="support-text" data-lang="ru">Если вам нравится наш проект Shark, вы можете поддержать нас. Так сайт станет более функциональным, и его релиз будет быстрее!</p>
         <p class="support-text" data-lang="en">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
         <div class="support-options">
-            <a href="https://t.me/noah_meu" target="_blank" class="styled-button accent">
+            <a href="https://t.me/noah_commit" target="_blank" class="styled-button accent">
                 <span class="material-symbols-outlined button-icon">favorite</span>
                 <span data-lang="ru">Пожертвовать</span>
                 <span data-lang="en">Donate</span>
             </a>
-            <a href="https://t.me/sharkfea" target="_blank" class="styled-button secondary">
+            <a href="https://t.me/sharkNewsFea" target="_blank" class="styled-button secondary">
                 <span class="material-symbols-outlined button-icon">volunteer_activism</span>
                 <span data-lang="ru">Стать Telegram</span>
                 <span data-lang="en">Become a Telegram</span>
@@ -284,7 +244,7 @@
                 <p class="footer-description" data-lang="ru">Мы ценим, что вы уделили нам минуту своего времени, с любовью, Разработчик Sharks</p>
                 <p class="footer-description" data-lang="en">We appreciate you taking the time to give us a minute of your time, with love, Developer Sharks</p>
                 <div class="social-links">
-                    <a href="https://t.me/noah_meu" target="_blank" class="social-link">
+                    <a href="https://t.me/noah_commit" target="_blank" class="social-link">
                         <span class="material-symbols-outlined">chat</span>
                     </a>
                     <a href="https://github.com/Noahcarlottepie/Noahcarlottepie.github.io" target="_blank" class="social-link">
@@ -331,7 +291,7 @@
     <!--Плашка версии внизу-->
     <div class="version-footer">
         <a href="#" data-lang="ru">Сайт скоро будет</a><a href="#" data-lang="en">WebSite coming soon</a> • 
-        Shark Web V 1.5
+        Shark Web V 1.7
     </div>
     <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
     <script>
