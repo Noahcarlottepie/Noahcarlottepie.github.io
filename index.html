@@ -25,7 +25,8 @@
             <!-- Кнопка Moderation -->
             <a href="https://t.me/noah_meu" target="_blank" class="mobile-nav-link moderation-link">
                 <span class="material-symbols-outlined">shield</span>
-                Moderation
+                <span data-lang="ru">Модерация</span>
+                <span data-lang="en">Moderation</span>
             </a>
             
             <div class="mobile-menu-divider"></div>
@@ -33,22 +34,26 @@
             <!-- Меню настроек -->
             <a href="#" class="mobile-nav-link" id="mobile-theme-toggle">
                 <span class="material-symbols-outlined">dark_mode</span>
-                Night Mode
+                <span data-lang="ru">Ночной режим</span>
+                <span data-lang="en">Night Mode</span>
             </a>
             
-            <a href="#" class="mobile-nav-link">
-                <span class="material-symbols-outlined">animation</span>
-                Animations
+            <a href="#" class="mobile-nav-link" id="mobile-language-toggle">
+                <span class="material-symbols-outlined">language</span>
+                <span data-lang="ru">Язык</span>
+                <span data-lang="en">Language</span>
             </a>
             
             <a href="https://t.me/sharkfea" target="_blank" class="mobile-nav-link">
                 <span class="material-symbols-outlined">featured_play_list</span>
-                Shark Features
+                <span data-lang="ru">Функции Shark</span>
+                <span data-lang="en">Shark Features</span>
             </a>
             
             <a href="https://t.me/noah_meu" target="_blank" class="mobile-nav-link">
                 <span class="material-symbols-outlined">bug_report</span>
-                Report a Bug
+                <span data-lang="ru">Сообщить об ошибке</span>
+                <span data-lang="en">Report a Bug</span>
             </a>
         </nav>
     </div>
@@ -64,34 +69,41 @@
                 <span class="material-symbols-outlined">menu</span>
             </button>
             <a href="https://t.me/noah_meu" target="_blank" class="mdc-button mdc-button--raised mdc-button--primary header-button">
-                <span class="mdc-button__label">Moderation</span>
+                <span class="mdc-button__label" data-lang="ru">Модерация</span>
+                <span class="mdc-button__label" data-lang="en">Moderation</span>
             </a>
             <div class="dropdown" id="settings-dropdown">
                 <a href="" class="mdc-button mdc-button--raised mdc-button--primary header-button" id="settings-button">
-                    <span class="mdc-button__label">Settings</span>
+                    <span class="mdc-button__label" data-lang="ru">Настройки</span>
+                    <span class="mdc-button__label" data-lang="en">Settings</span>
                 </a>
                 <div class="dropdown-content">
                     <a href="">
                         <span class="material-symbols-outlined">person</span>
-                        My Profile
+                        <span data-lang="ru">Мой профиль</span>
+                        <span data-lang="en">My Profile</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" id="theme-toggle">
                         <span class="material-symbols-outlined">dark_mode</span>
-                        Night Mode
+                        <span data-lang="ru">Ночной режим</span>
+                        <span data-lang="en">Night Mode</span>
                     </a>
-                    <a href="">
-                        <span class="material-symbols-outlined">animation</span>
-                        Animations
+                    <a href="#" id="language-toggle">
+                        <span class="material-symbols-outlined">language</span>
+                        <span data-lang="ru">Язык</span>
+                        <span data-lang="en">Language</span>
                     </a>
                     <a href="https://t.me/sharkfea" target="_blank">
                         <span class="material-symbols-outlined">featured_play_list</span>
-                        Shark Features
+                        <span data-lang="ru">Функции Shark</span>
+                        <span data-lang="en">Shark Features</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="https://t.me/noah_meu" target="_blank">
                         <span class="material-symbols-outlined">bug_report</span>
-                        Report a Bug
+                        <span data-lang="ru">Сообщить об ошибке</span>
+                        <span data-lang="en">Report a Bug</span>
                     </a>
                 </div>
             </div>
@@ -101,16 +113,20 @@
     <!--гл секция-->
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title animate">Dive Into The Future of Social Networking</h1>
-            <p class="hero-subtitle animate delay-1">Shark is a modern social platform where you can connect, share, and discover content that matters to you. Coming soon...</p>
+            <h1 class="hero-title animate" data-lang="ru">Погрузитесь в будущее социальных сетей</h1>
+            <h1 class="hero-title animate" data-lang="en">Dive Into The Future of Social Networking</h1>
+            <p class="hero-subtitle animate delay-1" data-lang="ru">Shark - это современная социальная платформа, где вы сможете общаться, делиться и находить контент, который важен для вас. Скоро...</p>
+            <p class="hero-subtitle animate delay-1" data-lang="en">Shark is a modern social platform where you can connect, share, and discover content that matters to you. Coming soon...</p>
             <div class="hero-buttons animate delay-2">
                 <a href="{{url_for('register')}}" class="styled-button primary">
                     <span class="material-symbols-outlined button-icon">rocket_launch</span>
-                    Get Started
+                    <span data-lang="ru">Начать</span>
+                    <span data-lang="en">Get Started</span>
                 </a>
                 <a href="#features" class="styled-button secondary">
                     <span class="material-symbols-outlined button-icon">info</span>
-                    Learn More
+                    <span data-lang="ru">Узнать больше</span>
+                    <span data-lang="en">Learn More</span>
                 </a>
             </div>
         </div>
@@ -118,74 +134,96 @@
 
     <!--Секция информации-->
     <section id="features" class="features-section">
-        <h2 class="section-title">Why Choose Shark?</h2>
-        <p class="section-subtitle">Discover the features that make Shark the perfect platform for your social experience</p>
+        <h2 class="section-title" data-lang="ru">Почему выбрать Shark?</h2>
+        <h2 class="section-title" data-lang="en">Why Choose Shark?</h2>
+        <p class="section-subtitle" data-lang="ru">Откройте для себя функции, которые делают Shark хорошей платформой для вашего социального опыта</p>
+        <p class="section-subtitle" data-lang="en">Discover the features that make Shark the perfect platform for your social experience</p>
         
         <div class="features-grid">
             <div class="feature-card animate">
                 <span class="material-symbols-outlined feature-icon">forum</span>
-                <h3 class="feature-title">Engaging Communities</h3>
-                <p class="feature-description">You will be able to join the community. And communicate with like-minded people.</p>
+                <h3 class="feature-title" data-lang="ru">Активные сообщества</h3>
+                <h3 class="feature-title" data-lang="en">Engaging Communities</h3>
+                <p class="feature-description" data-lang="ru">Вы сможете присоединиться к сообществам и общаться с единомышленниками.</p>
+                <p class="feature-description" data-lang="en">You will be able to join the communitys. And communicate with like-minded people.</p>
             </div>
             
             <div class="feature-card animate delay-1">
                 <span class="material-symbols-outlined feature-icon">trending_up</span>
-                <h3 class="feature-title">Website under development</h3>
-                <p class="feature-description">This means that you can contribute to the creation of the site. Just write to one of the developers)</p>
+                <h3 class="feature-title" data-lang="ru">Сайт в разработке</h3>
+                <h3 class="feature-title" data-lang="en">Website under development</h3>
+                <p class="feature-description" data-lang="ru">Это означает, что вы можете внести вклад в создание сайта. Просто напишите одному из разработчиков)</p>
+                <p class="feature-description" data-lang="en">This means that you can contribute to the creation of the site. Just write to one of the developers)</p>
             </div>
             
             <div class="feature-card animate delay-2">
                 <span class="material-symbols-outlined feature-icon">shield</span>
-                <h3 class="feature-title">Privacy Focused</h3>
-                <p class="feature-description">Your privacy is our priority. We give you full control over your data and who sees your content.</p>
+                <h3 class="feature-title" data-lang="ru">Конфиденциальность</h3>
+                <h3 class="feature-title" data-lang="en">Privacy Focused</h3>
+                <p class="feature-description" data-lang="ru">Ваша конфиденциальность - наш приоритет. Мы даем вам полный контроль над вашими данными.</p>
+                <p class="feature-description" data-lang="en">Your privacy is our priority. We give you full control over your data and who sees your content.</p>
             </div>
             
             <div class="feature-card animate">
                 <span class="material-symbols-outlined feature-icon">design_services</span>
-                <h3 class="feature-title">Modern design</h3>
-                <p class="feature-description">An interesting and catchy design greets you on our website. In development are light and other website themes)</p>
+                <h3 class="feature-title" data-lang="ru">Современный дизайн</h3>
+                <h3 class="feature-title" data-lang="en">Modern design</h3>
+                <p class="feature-description" data-lang="ru">Интересный и привлекательный дизайн ждет вас на нашем сайте. В разработке светлая и другие темы сайта)</p>
+                <p class="feature-description" data-lang="en">An interesting and catchy design greets you on our website. In development are light and other website themes)</p>
             </div>
             
             <div class="feature-card animate delay-1">
                 <span class="material-symbols-outlined feature-icon">rocket_launch</span>
-                <h3 class="feature-title">Lightning Fast</h3>
-                <p class="feature-description">Experience blazing fast performance with our optimized platform that loads in milliseconds.</p>
+                <h3 class="feature-title" data-lang="ru">Молниеносная скорость</h3>
+                <h3 class="feature-title" data-lang="en">Lightning Fast</h3>
+                <p class="feature-description" data-lang="ru">Оцените невероятно быструю производительность с нашей оптимизированной платформой.</p>
+                <p class="feature-description" data-lang="en">Experience blazing fast performance with our optimized platform that loads in milliseconds.</p>
             </div>
             
             <div class="feature-card animate delay-2">
                 <span class="material-symbols-outlined feature-icon">groups</span>
-                <h3 class="feature-title">Real Connections</h3>
-                <p class="feature-description">Build meaningful relationships with people who share your interests, not just accumulate followers.</p>
+                <h3 class="feature-title" data-lang="ru">Настоящие связи</h3>
+                <h3 class="feature-title" data-lang="en">Real Connections</h3>
+                <p class="feature-description" data-lang="ru">Стройте значимые отношения с людьми, которые разделяют ваши интересы.</p>
+                <p class="feature-description" data-lang="en">Build meaningful relationships with people who share your interests, not just accumulate followers.</p>
             </div>
         </div>
     </section>
 
     <!--Секция подключения к нам-->
     <section class="cta-section">
-        <h2 class="cta-title">Ready to Dive In?</h2>
-        <p class="cta-text">You will be able to join us soon, with respect, the developer of Sharks!</p>
+        <h2 class="cta-title" data-lang="ru">Готовы присоединиться?</h2>
+        <h2 class="cta-title" data-lang="en">Ready to Dive In?</h2>
+        <p class="cta-text" data-lang="ru">Вы сможете присоединиться к нам скоро, с уважением, разработчик Sharks!</p>
+        <p class="cta-text" data-lang="en">You will be able to join us soon, with respect, the developer of Sharks!</p>
         <a href="#" class="styled-button primary">
             <span class="material-symbols-outlined button-icon">person_add</span>
-            Create Your Account
+            <span data-lang="ru">Создать аккаунт</span>
+            <span data-lang="en">Create Your Account</span>
         </a>
     </section>
 
     <!--Секция поддержки авторов-->
     <section class="support-section">
-        <h2 class="support-title">Support the Creators</h2>
-        <p class="support-text">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
+        <h2 class="support-title" data-lang="ru">Поддержите создателей</h2>
+        <h2 class="support-title" data-lang="en">Support the Creators</h2>
+        <p class="support-text" data-lang="ru">Если вам нравится наш проект Shark, вы можете поддержать нас. Так сайт станет более функциональным, и его релиз будет быстрее!</p>
+        <p class="support-text" data-lang="en">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
         <div class="support-options">
             <a href="https://t.me/noah_meu" target="_blank" class="styled-button accent">
                 <span class="material-symbols-outlined button-icon">favorite</span>
-                Donate
+                <span data-lang="ru">Пожертвовать</span>
+                <span data-lang="en">Donate</span>
             </a>
             <a href="https://t.me/sharkfea" target="_blank" class="styled-button secondary">
                 <span class="material-symbols-outlined button-icon">volunteer_activism</span>
-                Become a Telegram
+                <span data-lang="ru">Стать Telegram</span>
+                <span data-lang="en">Become a Telegram</span>
             </a>
             <a href="" class="styled-button secondary">
                 <span class="material-symbols-outlined button-icon">share</span>
-                Share with Friends
+                <span data-lang="ru">Поделиться с друзьями</span>
+                <span data-lang="en">Share with Friends</span>
             </a>
         </div>
     </section>
@@ -195,7 +233,8 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-logo">SHARK</div>
-                <p class="footer-description">We appreciate you taking the time to give us a minute of your time, with love, Developer Sharks</p>
+                <p class="footer-description" data-lang="ru">Мы ценим, что вы уделили нам минуту своего времени, с любовью, Разработчик Sharks</p>
+                <p class="footer-description" data-lang="en">We appreciate you taking the time to give us a minute of your time, with love, Developer Sharks</p>
                 <div class="social-links">
                     <a href="https://t.me/noah_meu" target="_blank" class="social-link">
                         <span class="material-symbols-outlined">chat</span>
@@ -207,40 +246,43 @@
             </div>
             
             <div>
-                <h3 class="footer-heading">Platform</h3>
+                <h3 class="footer-heading" data-lang="ru">Платформа</h3>
+                <h3 class="footer-heading" data-lang="en">Platform</h3>
                 <ul class="footer-links">
-                    <li><a href="{{url_for('main')}}">Home</a></li>
-                    <li><a href="{{url_for('popular')}}">Popular</a></li>
-                    <li><a href="">Communities</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="{{url_for('main')}}" data-lang="ru">Главная</a><a href="{{url_for('main')}}" data-lang="en">Home</a></li>
+                    <li><a href="{{url_for('popular')}}" data-lang="ru">Популярное</a><a href="{{url_for('popular')}}" data-lang="en">Popular</a></li>
+                    <li><a href="" data-lang="ru">Сообщества</a><a href="" data-lang="en">Communities</a></li>
+                    <li><a href="" data-lang="ru">О нас</a><a href="" data-lang="en">About Us</a></li>
                 </ul>
             </div>
             
             <div>
-                <h3 class="footer-heading">Resources</h3>
+                <h3 class="footer-heading" data-lang="ru">Ресурсы</h3>
+                <h3 class="footer-heading" data-lang="en">Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="">Help Center</a></li>
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">Terms of Service</a></li>
-                    <li><a href="">Community Guidelines</a></li>
+                    <li><a href="" data-lang="ru">Центр помощи</a><a href="" data-lang="en">Help Center</a></li>
+                    <li><a href="" data-lang="ru">Политика конфиденциальности</a><a href="" data-lang="en">Privacy Policy</a></li>
+                    <li><a href="" data-lang="ru">Условия использования</a><a href="" data-lang="en">Terms of Service</a></li>
+                    <li><a href="" data-lang="ru">Правила сообщества</a><a href="" data-lang="en">Community Guidelines</a></li>
                 </ul>
             </div>
             
             <div>
-                <h3 class="footer-heading">Connect</h3>
+                <h3 class="footer-heading" data-lang="ru">Связь</h3>
+                <h3 class="footer-heading" data-lang="en">Connect</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#" data-lang="ru">Telegram</a><a href="#" data-lang="en">Telegram</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="copyright">
-            &copy; 2025 Shark Social Platform. All rights reserved.
+            &copy; 2025 Shark Social Platform. <span data-lang="ru">Все права защищены.</span><span data-lang="en">All rights reserved.</span>
         </div>
     </footer>
     <!--Плашка версии внизу-->
     <div class="version-footer">
-        <a href="#">WebSite coming soon</a> • 
+        <a href="#" data-lang="ru">Сайт скоро будет</a><a href="#" data-lang="en">WebSite coming soon</a> • 
         Shark Web V 1.5
     </div>
     <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
@@ -250,6 +292,78 @@ document.addEventListener('DOMContentLoaded', () => {
     buttons.forEach(button => {
         mdc.ripple.MDCRipple.attachTo(button);
     });
+    
+    // Система переключения языков
+    let currentLanguage = localStorage.getItem('language') || 'ru';
+    
+    function setLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+        
+        // Обновляем атрибут lang для HTML
+        document.documentElement.lang = lang;
+        
+        // Показываем/скрываем элементы с правильным языком
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            if (element.getAttribute('data-lang') === lang) {
+                element.style.display = '';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+        
+        // Обновляем текст кнопки языка
+        updateLanguageButton();
+    }
+    
+    function updateLanguageButton() {
+        const languageButton = document.getElementById('language-toggle');
+        const mobileLanguageButton = document.getElementById('mobile-language-toggle');
+        
+        if (languageButton) {
+            const languageIcon = languageButton.querySelector('.material-symbols-outlined');
+            if (currentLanguage === 'ru') {
+                languageButton.innerHTML = '<span class="material-symbols-outlined">language</span>English';
+            } else {
+                languageButton.innerHTML = '<span class="material-symbols-outlined">language</span>Русский';
+            }
+        }
+        
+        if (mobileLanguageButton) {
+            const mobileLanguageIcon = mobileLanguageButton.querySelector('.material-symbols-outlined');
+            if (currentLanguage === 'ru') {
+                mobileLanguageButton.innerHTML = '<span class="material-symbols-outlined">language</span>English';
+            } else {
+                mobileLanguageButton.innerHTML = '<span class="material-symbols-outlined">language</span>Русский';
+            }
+        }
+    }
+    
+    function toggleLanguage() {
+        const newLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
+        setLanguage(newLanguage);
+    }
+    
+    // Обработчики для кнопок переключения языка
+    const languageButton = document.getElementById('language-toggle');
+    if (languageButton) {
+        languageButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleLanguage();
+            settingsDropdown.classList.remove('show');
+        });
+    }
+    
+    const mobileLanguageButton = document.getElementById('mobile-language-toggle');
+    if (mobileLanguageButton) {
+        mobileLanguageButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleLanguage();
+        });
+    }
+    
+    // Устанавливаем язык при загрузке
+    setLanguage(currentLanguage);
     
     //меню
     const mobileMenu = document.getElementById('mobile-menu');
@@ -320,11 +434,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const themeIcon = themeButton.querySelector('.material-symbols-outlined');
             if (document.body.classList.contains('light-theme')) {
                 themeIcon.textContent = 'light_mode';
-                themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
+                themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span><span data-lang="ru">Дневной режим</span><span data-lang="en">Day Mode</span>';
             } else {
                 themeIcon.textContent = 'dark_mode';
-                themeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span>Night Mode';
+                themeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span><span data-lang="ru">Ночной режим</span><span data-lang="en">Night Mode</span>';
             }
+            setLanguage(currentLanguage); // Обновляем язык после изменения HTML
         }
         
         //Обновляем иконку в мобильном меню
@@ -343,11 +458,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (document.body.classList.contains('light-theme')) {
             themeIcon.textContent = 'light_mode';
-            mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
+            mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span><span data-lang="ru">Дневной режим</span><span data-lang="en">Day Mode</span>';
         } else {
             themeIcon.textContent = 'dark_mode';
-            mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span>Night Mode';
+            mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span><span data-lang="ru">Ночной режим</span><span data-lang="en">Night Mode</span>';
         }
+        setLanguage(currentLanguage); // Обновляем язык после изменения HTML
     }
     
     //Обработчик клика по кнопке темы
@@ -379,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (themeButton) {
             const themeIcon = themeButton.querySelector('.material-symbols-outlined');
             themeIcon.textContent = 'light_mode';
-            themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span>Day Mode';
+            themeButton.innerHTML = '<span class="material-symbols-outlined">light_mode</span><span data-lang="ru">Дневной режим</span><span data-lang="en">Day Mode</span>';
         }
     }
     
@@ -440,8 +556,7 @@ if (isMobileDevice()) {
         mobileObserver.observe(card);
     });
 }
-    }
-);
+});
     </script>
 </body>
 </html>
