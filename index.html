@@ -10,6 +10,46 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Orbitron:wght@700;800&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        /* Стили для плашек "Coming Soon" */
+        .coming-soon-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #FF8B60 0%, #FF6B4A 100%);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(255, 107, 74, 0.4);
+            white-space: nowrap;
+        }
+        
+        .button-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .disabled-button {
+            pointer-events: none;
+            opacity: 0.7;
+            position: relative;
+        }
+        
+        .disabled-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: var(--shape-corner-medium);
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
     <!--меню-->
@@ -118,11 +158,15 @@
             <p class="hero-subtitle animate delay-1" data-lang="ru">Shark - это современная социальная платформа, где вы сможете общаться, делиться и находить контент, который важен для вас. Скоро...</p>
             <p class="hero-subtitle animate delay-1" data-lang="en">Shark is a modern social platform where you can connect, share, and discover content that matters to you. Coming soon...</p>
             <div class="hero-buttons animate delay-2">
-                <a href="{{url_for('register')}}" class="styled-button primary">
-                    <span class="material-symbols-outlined button-icon">rocket_launch</span>
-                    <span data-lang="ru">Начать</span>
-                    <span data-lang="en">Get Started</span>
-                </a>
+                <div class="button-container">
+                    <span class="coming-soon-badge" data-lang="ru">Скоро</span>
+                    <span class="coming-soon-badge" data-lang="en">Coming Soon</span>
+                    <a href="{{url_for('register')}}" class="styled-button primary disabled-button">
+                        <span class="material-symbols-outlined button-icon">rocket_launch</span>
+                        <span data-lang="ru">Начать</span>
+                        <span data-lang="en">Get Started</span>
+                    </a>
+                </div>
                 <a href="#features" class="styled-button secondary">
                     <span class="material-symbols-outlined button-icon">info</span>
                     <span data-lang="ru">Узнать больше</span>
@@ -196,11 +240,15 @@
         <h2 class="cta-title" data-lang="en">Ready to Dive In?</h2>
         <p class="cta-text" data-lang="ru">Вы сможете присоединиться к нам скоро, с уважением, разработчик Sharks!</p>
         <p class="cta-text" data-lang="en">You will be able to join us soon, with respect, the developer of Sharks!</p>
-        <a href="#" class="styled-button primary">
-            <span class="material-symbols-outlined button-icon">person_add</span>
-            <span data-lang="ru">Создать аккаунт</span>
-            <span data-lang="en">Create Your Account</span>
-        </a>
+        <div class="button-container">
+            <span class="coming-soon-badge" data-lang="ru">Скоро</span>
+            <span class="coming-soon-badge" data-lang="en">Coming Soon</span>
+            <a href="#" class="styled-button primary disabled-button">
+                <span class="material-symbols-outlined button-icon">person_add</span>
+                <span data-lang="ru">Создать аккаунт</span>
+                <span data-lang="en">Create Your Account</span>
+            </a>
+        </div>
     </section>
 
     <!--Секция поддержки авторов-->
