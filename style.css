@@ -1004,3 +1004,101 @@ body.light-theme .mobile-menu {
             border-radius: var(--shape-corner-medium);
             z-index: 1;
         }
+        
+        /* Стили для плашки "New!" */
+.new-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(135deg, #FF8B60  0%, #FF6B4A 100%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(255, 107, 74, 0.4);
+    white-space: nowrap;
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(76, 175, 80, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+    }
+}
+/* Стилизация скроллбара для WebKit браузеров (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--md-sys-color-surface-variant);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--md-sys-color-primary);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--md-sys-color-primary-container);
+    border: 1px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--md-sys-color-on-primary-container);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--md-sys-color-surface-variant);
+}
+
+/* Стилизация для Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--md-sys-color-primary) var(--md-sys-color-surface-variant);
+}
+
+/* Супер-компактные бейджи */
+.dropdown-item-container .coming-soon-badge {
+    position: absolute;
+    top: 8px;
+    right: 45px;
+    background: #FF6B4A;
+    color: white;
+    padding: 0px 2px;
+    border-radius: 2px;
+    font-size: 0.35rem;
+    font-weight: 800;
+    z-index: 2;
+    line-height: 1.2;
+    transform: scale(0.8);
+}
+
+.mobile-nav .coming-soon-badge {
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    background: #FF6B4A;
+    color: white;
+    padding: 0px 2px;
+    border-radius: 2px;
+    font-size: 0.35rem;
+    font-weight: 800;
+    z-index: 2;
+    line-height: 1.2;
+    transform: scale(0.8);
+}
+
