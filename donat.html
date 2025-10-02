@@ -124,9 +124,17 @@
                     <span data-lang="en">project readiness</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">62</span>
-                    <span data-lang="ru">дней разработки</span>
-                    <span data-lang="en">days of development</span>
+                    <div class="days-counter-container">
+                        <div class="days-counter-circle">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring-background" cx="40" cy="40" r="36" stroke-width="4"></circle>
+                                <circle class="progress-ring-circle" cx="40" cy="40" r="36" stroke-width="4"></circle>
+                            </svg>
+                            <div class="days-counter-number" id="days-counter">0</div>
+                        </div>
+                    </div>
+                    <span data-lang="ru">дней до релиза</span>
+                    <span data-lang="en">days until release</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">15+</span>
@@ -510,12 +518,62 @@
     <!-- Плашка версии -->
     <div class="version-footer">
         <a href="#" data-lang="ru">Сайт скоро будет</a><a href="#" data-lang="en">WebSite coming soon</a> • 
-        Shark Web V 2.0
+        Shark Web V 2.0.1
     </div>
 
     <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
     <script>
+        // Функция для расчета дней до апреля следующего года
+        function calculateDaysToNextApril() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth();
+            
+            // Если сейчас уже апрель или позже, берем следующий год
+            const targetYear = currentMonth >= 3 ? currentYear + 1 : currentYear;
+            
+            // Дата 1 апреля целевого года
+            const targetDate = new Date(targetYear, 3, 1); // 3 = апрель (месяцы от 0 до 11)
+            
+            // Разница в миллисекундах
+            const diffTime = targetDate - now;
+            
+            // Конвертируем в дни
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            return diffDays;
+        }
+
+        // Функция для обновления счетчика дней и анимации круга
+        function updateDaysCounter() {
+            const days = calculateDaysToNextApril();
+            const daysCounter = document.getElementById('days-counter');
+            const progressCircle = document.querySelector('.progress-ring-circle');
+            
+            // Обновляем число дней
+            daysCounter.textContent = days;
+            
+            // Рассчитываем прогресс для анимации круга (максимум 365 дней)
+            const maxDays = 365;
+            const progress = Math.min((maxDays - days) / maxDays, 1);
+            const circumference = 2 * Math.PI * 36;
+            const offset = circumference - (progress * circumference);
+            
+            // Применяем анимацию к кругу
+            progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+            progressCircle.style.strokeDashoffset = offset;
+            
+            // Добавляем класс для плавной анимации
+            progressCircle.style.transition = 'stroke-dashoffset 1s ease-in-out';
+        }
+
+        // Обновляем счетчик при загрузке страницы
         document.addEventListener('DOMContentLoaded', () => {
+            updateDaysCounter();
+            
+            // Обновляем счетчик каждую минуту (на случай, если пользователь оставит страницу открытой)
+            setInterval(updateDaysCounter, 60000);
+
             const buttons = document.querySelectorAll('.mdc-button');
             buttons.forEach(button => {
                 mdc.ripple.MDCRipple.attachTo(button);
@@ -873,6 +931,47 @@ window.onclick = function(event) {
     </script>
 
     <style>
+        /* Стили для счетчика дней */
+        .days-counter-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .days-counter-circle {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-background {
+            fill: transparent;
+            stroke: var(--md-sys-color-outline-variant);
+            stroke-width: 4;
+        }
+
+        .progress-ring-circle {
+            fill: transparent;
+            stroke: var(--md-sys-color-primary);
+            stroke-width: 4;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease-in-out;
+        }
+
+        .days-counter-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--md-sys-color-primary);
+        }
+
         /* Стили для секции пожертвований */
         .donation-section {
             min-height: 100vh;
@@ -926,6 +1025,7 @@ window.onclick = function(event) {
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-width: 120px;
         }
         
         .stat-number {
@@ -933,11 +1033,14 @@ window.onclick = function(event) {
             font-weight: 800;
             color: var(--md-sys-color-primary);
             margin-bottom: 8px;
+            line-height: 1;
         }
         
         .stat-item span:not(.stat-number) {
             font-size: 0.9rem;
             color: var(--md-sys-color-on-surface-variant);
+            text-align: center;
+            line-height: 1.3;
         }
         
         .donation-methods {
@@ -1600,7 +1703,7 @@ body.light-theme .join-team {
             animation: pulse-disabled 3s ease-in-out infinite;
         }
         
-        /* Адаптация для мобильных */
+        /* АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
         @media (max-width: 768px) {
             .donation-title {
                 font-size: 2.5rem;
@@ -1608,19 +1711,50 @@ body.light-theme .join-team {
             
             .donation-subtitle {
                 font-size: 1.1rem;
+                margin-bottom: 40px;
             }
             
             .donation-stats {
                 gap: 20px;
+                margin-bottom: 40px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                min-width: 140px;
+                margin-bottom: 15px;
             }
             
             .stat-number {
                 font-size: 2rem;
             }
             
+            .days-counter-circle {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .days-counter-number {
+                font-size: 1.6rem;
+            }
+            
+            .progress-ring {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .progress-ring-background,
+            .progress-ring-circle {
+                cx: 35;
+                cy: 35;
+                r: 32;
+            }
+            
             .donation-methods {
                 grid-template-columns: 1fr;
                 gap: 20px;
+                margin-bottom: 40px;
             }
             
             .donation-method {
@@ -1629,10 +1763,13 @@ body.light-theme .join-team {
             
             .donation-info {
                 grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 60px;
             }
             
             .impact-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .developers-grid {
@@ -1651,6 +1788,7 @@ body.light-theme .join-team {
             
             .modal-content {
                 margin: 0 10px;
+                max-width: 95%;
             }
             
             .crypto-currencies {
@@ -1690,6 +1828,80 @@ body.light-theme .join-team {
             
             .developers-section {
                 padding: 20px;
+            }
+            
+            .donation-stats {
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .days-counter-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .days-counter-number {
+                font-size: 1.4rem;
+            }
+            
+            .progress-ring {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .progress-ring-background,
+            .progress-ring-circle {
+                cx: 30;
+                cy: 30;
+                r: 28;
+            }
+        }
+        
+        /* Для очень маленьких экранов */
+        @media (max-width: 360px) {
+            .donation-title {
+                font-size: 1.8rem;
+            }
+            
+            .donation-stats {
+                gap: 10px;
+            }
+            
+            .stat-item {
+                min-width: 100px;
+            }
+            
+            .stat-number {
+                font-size: 1.6rem;
+            }
+            
+            .days-counter-circle {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .days-counter-number {
+                font-size: 1.2rem;
+            }
+            
+            .progress-ring {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .progress-ring-background,
+            .progress-ring-circle {
+                cx: 25;
+                cy: 25;
+                r: 22;
+                stroke-width: 3;
             }
         }
         /* Анимированные лепестки сакуры */
