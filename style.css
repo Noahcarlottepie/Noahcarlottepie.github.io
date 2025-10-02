@@ -1160,36 +1160,7 @@ body.red-blue-theme .mobile-menu {
     scrollbar-color: var(--md-sys-color-primary) var(--md-sys-color-surface-variant);
 }
 
-/* Супер-компактные бейджи */
-.dropdown-item-container .coming-soon-badge {
-    position: absolute;
-    top: 8px;
-    right: 45px;
-    background: var(--red-blue-secondary);
-    color: white;
-    padding: 0px 2px;
-    border-radius: 2px;
-    font-size: 0.35rem;
-    font-weight: 800;
-    z-index: 2;
-    line-height: 1.2;
-    transform: scale(0.8);
-}
 
-.mobile-nav .coming-soon-badge {
-    position: absolute;
-    top: 10px;
-    right: 45px;
-    background: var(--red-blue-secondary);
-    color: white;
-    padding: 0px 2px;
-    border-radius: 2px;
-    font-size: 0.35rem;
-    font-weight: 800;
-    z-index: 2;
-    line-height: 1.2;
-    transform: scale(0.8);
-}
 /* Анимированные лепестки сакуры */
 .sakura-petals {
     position: fixed;
@@ -1348,4 +1319,22 @@ body.light-theme::before {
 /*Фон с градиентом для красно-синей темы с сакурой*/
 body.red-blue-theme::before {
     background: linear-gradient(135deg, #1a1426 0%, #2a1e3a 50%, #1e2a3a 100%);
+}
+/* Стиль для выключенных анимаций */
+body.animations-disabled .sakura-petals {
+    display: none;
+}
+
+/* Стиль для активной кнопки анимаций */
+.mobile-nav-link.animations-disabled,
+.dropdown-content a.animations-disabled {
+    background-color: rgba(255, 107, 74, 0.1);
+    color: #FF6B4A;
+}
+.developer-bio {
+    font-size: 0.85rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 8px 0 0 0;
+    line-height: 1.4;
+    font-style: italic;
 }

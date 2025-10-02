@@ -254,65 +254,74 @@
                 </div>
             </div>
             
-            <!-- Секция разработчиков -->
-            <div class="developers-section animate delay-4 disabled-section">
-                <div class="section-header">
-                    <h2 data-lang="ru">Наша команда разработчиков</h2>
-                    <h2 data-lang="en">Our Development Team</h2>
-                    <div class="new-badge-container">
-                        <span class="new-badge" data-lang="ru">В разработке</span>
-                        <span class="new-badge" data-lang="en">In development</span>
-                    </div>
-                </div>
-                <p data-lang="ru">Люди, которые создают Shark Concept</p>
-                <p data-lang="en">People who create Shark Concept</p>
-                
-                <div class="developers-grid">
-                    <div class="developer-card disabled-card">
-                        <div class="developer-avatar">
-                            <span class="material-symbols-outlined">person</span>
-                        </div>
-                        <div class="developer-info">
-                            <h4>Noah</h4>
-                            <p class="developer-role" data-lang="ru">Главный разработчик</p>
-                            <p class="developer-role" data-lang="en">Lead Developer</p>
-                            <div class="developer-skills">
-                                <span class="skill-tag">Html+css</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">Python</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="developer-card disabled-card">
-                        <div class="developer-avatar">
-                            <span class="material-symbols-outlined">person</span>
-                        </div>
-                        <div class="developer-info">
-                            <h4>Sergey</h4>
-                            <p class="developer-role" data-lang="ru">Бэкенд разработчик</p>
-                            <p class="developer-role" data-lang="en">Backend Developer</p>
-                            <div class="developer-skills">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Database</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="join-team disabled-card">
-                    <h3 data-lang="ru">Хотите присоединиться к команде?</h3>
-                    <h3 data-lang="en">Want to join the team?</h3>
-                    <p data-lang="ru">Мы всегда рады новым разработчикам</p>
-                    <p data-lang="en">We're always open to new developers</p>
-                    <a href="https://t.me/prelude_commit" target="_blank" class="styled-button primary disabled-button">
-                        <span class="material-symbols-outlined">work</span>
-                        <span data-lang="ru">Связаться с нами</span>
-                        <span data-lang="en">Contact Us</span>
-                    </a>
+           <!-- Секция разработчиков - компактная версия -->
+<div class="developers-section animate delay-4">
+    <h2 data-lang="ru">Наша команда разработчиков</h2>
+    <h2 data-lang="en">Our Development Team</h2>
+    <p data-lang="ru">Люди и не только, которые делают сайт</p>
+    <p data-lang="en">People and others who make the site</p>
+    
+    <div class="developers-grid">
+        <div class="developer-card">
+            <div class="developer-avatar">
+                <span class="material-symbols-outlined">code</span>
+            </div>
+            <div class="developer-info">
+                <h4>Noah</h4>
+                <p class="developer-role" data-lang="ru">Главный разработчик</p>
+                <p class="developer-role" data-lang="en">Lead Developer</p>
+                <div class="developer-skills">
+                    <span class="skill-tag">Frontend</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">UI/UX</span>
                 </div>
             </div>
         </div>
+        
+        <div class="developer-card">
+            <div class="developer-avatar">
+                <span class="material-symbols-outlined">storage</span>
+            </div>
+            <div class="developer-info">
+                <h4>Sergey</h4>
+                <p class="developer-role" data-lang="ru">Бэкенд разработчик</p>
+                <p class="developer-role" data-lang="en">Backend Developer</p>
+                <div class="developer-skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Database</span>
+                    <span class="skill-tag">API</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="developer-card">
+            <div class="developer-avatar">
+                <span class="material-symbols-outlined">pets</span>
+            </div>
+            <div class="developer-info">
+                <h4>Cat</h4>
+                <p class="developer-role" data-lang="ru">SEO специалист</p>
+                <p class="developer-role" data-lang="en">SEO Specialist</p>
+                <div class="developer-skills">
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Analytics</span>
+                    <span class="skill-tag">Purring</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ <div class="join-team">
+    <h3 data-lang="ru">Хотите присоединиться к команде?</h3>
+    <h3 data-lang="en">Want to join the team?</h3>
+    <p data-lang="ru">Мы всегда рады новым разработчикам</p>
+    <p data-lang="en">We're always open to new developers</p>
+    <button class="styled-button primary" onclick="openContactModal()">
+        <span class="material-symbols-outlined">work</span>
+        <span data-lang="ru">Связаться с нами</span>
+        <span data-lang="en">Contact Us</span>
+    </button>
+</div>
     </section>
 
     <!-- Модальные окна -->
@@ -394,6 +403,56 @@
             </div>
         </div>
     </div>
+    <div id="contact-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 data-lang="ru">Связаться с нами</h2>
+            <h2 data-lang="en">Contact Us</h2>
+            <button class="modal-close" onclick="closeContactModal()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p data-lang="ru">Основной способ связи с разработчиком</p>
+                    <p data-lang="en">The main way to contact the developer</p>
+                    <a href="https://t.me/prelude_commit" target="_blank" class="styled-button primary contact-button">
+                        <span class="material-symbols-outlined">send</span>
+                        <span>@prelude_commit</span>
+                    </a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="method-icon">
+                        <span class="material-symbols-outlined">campaign</span>
+                    </div>
+                    <h3 data-lang="ru">Канал</h3>
+                    <h3 data-lang="en">Channel</h3>
+                    <p data-lang="ru">Официальный канал проекта</p>
+                    <p data-lang="en">Official project channel</p>
+                    <a href="https://t.me/sharkNewsFea" target="_blank" class="styled-button primary contact-button">
+                        <span class="material-symbols-outlined">campaign</span>
+                        <span data-lang="ru">Shark Channel</span>
+                        <span data-lang="en">Shark Channel</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="modal-note">
+                <span class="material-symbols-outlined">info</span>
+                <p data-lang="ru">Мы ответим в течение 24 часов</p>
+                <p data-lang="en">We'll respond within 24 hours</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
     <!-- Футер -->
     <footer class="footer">
@@ -451,7 +510,7 @@
     <!-- Плашка версии -->
     <div class="version-footer">
         <a href="#" data-lang="ru">Сайт скоро будет</a><a href="#" data-lang="en">WebSite coming soon</a> • 
-        Shark Web V 1.9
+        Shark Web V 2.0
     </div>
 
     <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
@@ -781,6 +840,36 @@
                 closeOtherModal();
             }
         }
+        // Функции для модального окна связи
+function openContactModal() {
+    document.getElementById('contact-modal').style.display = 'flex';
+}
+
+function closeContactModal() {
+    document.getElementById('contact-modal').style.display = 'none';
+}
+
+// Обнови функцию закрытия по клику вне окна
+window.onclick = function(event) {
+    const cardModal = document.getElementById('card-modal');
+    const cryptoModal = document.getElementById('crypto-modal');
+    const otherModal = document.getElementById('other-modal');
+    const contactModal = document.getElementById('contact-modal');
+    
+    if (event.target === cardModal) {
+        closeCardModal();
+    }
+    if (event.target === cryptoModal) {
+        closeCryptoModal();
+    }
+    if (event.target === otherModal) {
+        closeOtherModal();
+    }
+    if (event.target === contactModal) {
+        closeContactModal();
+    }
+}
+        
     </script>
 
     <style>
@@ -990,120 +1079,343 @@
             font-size: 0.9rem;
         }
         
-        /* Стили для новой секции разработчиков */
-        .developers-section {
-            margin-top: 60px;
-            padding: 40px;
-            border-radius: var(--shape-corner-large);
-            backdrop-filter: blur(12px) brightness(0.8);
-            -webkit-backdrop-filter: blur(12px) brightness(0.8);
-            background-color: var(--md-sys-color-surface) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        }
-        
-        .developers-section h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 0 16px 0;
-            color: var(--md-sys-color-primary);
-        }
-        
-        .developers-section > p {
-            color: var(--md-sys-color-on-surface-variant);
-            margin: 0 0 40px 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .developers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .developer-card {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            border-radius: var(--shape-corner-medium);
-            backdrop-filter: blur(12px) brightness(0.8);
-            -webkit-backdrop-filter: blur(12px) brightness(0.8);
-            background-color: var(--md-sys-color-surface-variant) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-            transition: transform 0.3s ease;
-        }
-        
-        .developer-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .developer-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        
-        .developer-avatar .material-symbols-outlined {
-            font-size: 2rem;
-        }
-        
-        .developer-info h4 {
-            margin: 0 0 8px 0;
-            color: var(--md-sys-color-on-surface);
-            font-size: 1.2rem;
-        }
-        
-        .developer-info p {
-            margin: 0 0 12px 0;
-            color: var(--md-sys-color-on-surface-variant);
-            font-size: 0.9rem;
-        }
-        
-        .developer-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .skill-tag {
-            background-color: var(--md-sys-color-primary-container);
-            color: var(--md-sys-color-on-primary-container);
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .join-team {
-            text-align: center;
-            padding: 30px;
-            border-radius: var(--shape-corner-medium);
-            backdrop-filter: blur(12px) brightness(0.8);
-            -webkit-backdrop-filter: blur(12px) brightness(0.8);
-            background-color: var(--md-sys-color-surface-variant) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        }
-        
-        .join-team h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 0 10px 0;
-            color: var(--md-sys-color-on-surface);
-        }
-        
-        .join-team p {
-            color: var(--md-sys-color-on-surface-variant);
-            margin: 0 0 20px 0;
-        }
+/* Стили для секции разработчиков - компактная версия */
+.developers-section {
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: var(--shape-corner-large);
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
+}
+
+.developers-section h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    color: var(--md-sys-color-primary);
+    text-align: center;
+}
+
+.developers-section > p {
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.developers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.developer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    border-radius: var(--shape-corner-medium);
+    background: var(--md-sys-color-surface) !important;
+    border: 1px solid var(--md-sys-color-outline-variant) !important;
+    transition: all 0.3s ease;
+    text-align: center;
+    height: auto;
+    min-height: 180px;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--md-sys-color-primary) !important;
+}
+
+.developer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.developer-avatar .material-symbols-outlined {
+    font-size: 1.5rem;
+}
+
+.developer-info {
+    width: 100%;
+}
+
+.developer-info h4 {
+    margin: 0 0 8px 0;
+    color: var(--md-sys-color-on-surface);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.developer-role {
+    margin: 0 0 12px 0 !important;
+    color: var(--md-sys-color-primary) !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+}
+
+.developer-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.skill-tag {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.join-team {
+    text-align: center;
+    padding: 25px;
+    border-radius: var(--shape-corner-medium);
+    background: var(--md-sys-color-surface) !important;
+    border: 1px solid var(--md-sys-color-outline-variant) !important;
+}
+
+.join-team h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.join-team p {
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 0 20px 0;
+    font-size: 1rem;
+}
+
+/* Убираем серый фон и эффекты disabled */
+.developers-section.disabled-section {
+    opacity: 1;
+    filter: none;
+    pointer-events: auto;
+    user-select: auto;
+    animation: none;
+}
+
+.developers-section.disabled-section::before {
+    display: none;
+}
+
+.developer-card.disabled-card {
+    opacity: 1;
+    filter: none;
+}
+
+.developer-card.disabled-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.join-team.disabled-card {
+    opacity: 1;
+}
+
+.disabled-button {
+    opacity: 1 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+.disabled-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Для светлой темы */
+body.light-theme .developer-card,
+body.light-theme .join-team {
+    background: var(--md-sys-color-surface) !important;
+    border: 1px solid var(--md-sys-color-outline-variant) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .developer-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .developers-section {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+    
+    .developers-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .developers-section > p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    
+    .developers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .developer-card {
+        padding: 15px 10px;
+        min-height: 160px;
+    }
+    
+    .developer-avatar {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 12px;
+    }
+    
+    .developer-avatar .material-symbols-outlined {
+        font-size: 1.3rem;
+    }
+    
+    .developer-info h4 {
+        font-size: 1rem;
+    }
+    
+    .developer-role {
+        font-size: 0.85rem !important;
+    }
+    
+    .skill-tag {
+        padding: 3px 6px;
+        font-size: 0.7rem;
+    }
+    
+    .join-team {
+        padding: 20px 15px;
+    }
+    
+    .join-team h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .developers-grid {
+        grid-template-columns: 1fr;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .developer-card {
+        min-height: 140px;
+    }
+}
+
+/* Для светлой темы */
+body.light-theme .developers-section,
+body.light-theme .developer-card,
+body.light-theme .join-team {
+    backdrop-filter: blur(8px) brightness(1);
+    -webkit-backdrop-filter: blur(8px) brightness(1);
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .developers-section {
+        padding: 25px 20px;
+        margin-top: 40px;
+    }
+    
+    .developers-section h2 {
+        font-size: 1.7rem;
+    }
+    
+    .developers-section > p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .developers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .developer-card {
+        padding: 25px 20px;
+    }
+    
+    .developer-avatar {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 18px;
+    }
+    
+    .developer-avatar .material-symbols-outlined {
+        font-size: 2.2rem;
+    }
+    
+    .developer-info h4 {
+        font-size: 1.3rem;
+    }
+    
+    .join-team {
+        padding: 30px 25px;
+    }
+    
+    .join-team h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .developers-section {
+        padding: 20px 15px;
+    }
+    
+    .developers-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .developer-card {
+        padding: 20px 15px;
+    }
+    
+    .developer-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .developer-avatar .material-symbols-outlined {
+        font-size: 2rem;
+    }
+    
+    .developer-info h4 {
+        font-size: 1.2rem;
+    }
+    
+    .skill-tag {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}
         
         /* Стили для модальных окон */
         .modal-overlay {
@@ -1486,6 +1798,140 @@
     /* Меньше лепестков на мобильных для производительности */
     .sakura-petal:nth-child(n+15) {
         display: none;
+    }
+}
+/* Стили для модального окна связи */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-method {
+    padding: 20px;
+    border-radius: var(--shape-corner-medium);
+    background-color: var(--md-sys-color-surface-variant);
+    text-align: center;
+    border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.contact-method .method-icon {
+    font-size: 3rem;
+    color: var(--md-sys-color-primary);
+    margin-bottom: 12px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
+    border-radius: 50%;
+    color: white;
+}
+
+.contact-method h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.contact-method p {
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    min-height: 40px;
+}
+
+.contact-button {
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    min-height: 36px !important;
+    width: 100% !important;
+    max-width: 180px !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+}
+
+.contact-button .material-symbols-outlined {
+    font-size: 1.1rem !important;
+    margin-right: 6px !important;
+}
+
+/* Увеличиваем само модальное окно */
+#contact-modal .modal-content {
+    max-width: 550px;
+    width: 90%;
+}
+
+/* Для светлой темы */
+body.light-theme .contact-method {
+    background-color: var(--md-sys-color-surface-variant);
+    border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+body.light-theme .contact-method .method-icon {
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
+    color: white;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .contact-method {
+        padding: 18px 15px;
+    }
+    
+    .contact-method .method-icon {
+        font-size: 2.5rem;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .contact-method h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-method p {
+        font-size: 0.85rem;
+        min-height: 35px;
+    }
+    
+    .contact-button {
+        padding: 6px 14px !important;
+        font-size: 0.8rem !important;
+        min-height: 32px !important;
+        max-width: 160px !important;
+    }
+    
+    #contact-modal .modal-content {
+        max-width: 400px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-method {
+        padding: 15px 12px;
+    }
+    
+    .contact-method .method-icon {
+        font-size: 2.2rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-button {
+        max-width: 140px !important;
     }
 }
 
