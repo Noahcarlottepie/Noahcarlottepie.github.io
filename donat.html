@@ -125,7 +125,7 @@
                     <span data-lang="en">project readiness</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">61</span>
+                    <span class="stat-number">62</span>
                     <span data-lang="ru">дней разработки</span>
                     <span data-lang="en">days of development</span>
                 </div>
@@ -255,25 +255,65 @@
                 </div>
             </div>
             
-            <div class="supporters-section animate delay-4">
-                <h2 data-lang="ru">Наши благодарности</h2>
-                <h2 data-lang="en">Our Acknowledgments</h2>
-                <p data-lang="ru">Особая благодарность нашим спонсорам и сторонникам</p>
-                <p data-lang="en">Special thanks to our sponsors and supporters</p>
-                
-                <div class="become-supporter">
-                    <h3 data-lang="ru">Станьте частью нашей истории!</h3>
-                    <h3 data-lang="en">Become part of our story!</h3>
-                    <p data-lang="ru">Ваше имя может появиться здесь</p>
-                    <p data-lang="en">Your name could appear here</p>
-                    <a href="https://t.me/noah_commit" target="_blank" class="styled-button accent">
-                        <span class="material-symbols-outlined">volunteer_activism</span>
-                        <span data-lang="ru">Поддержать проект</span>
-                        <span data-lang="en">Support the Project</span>
-                    </a>
+<!-- Новая секция разработчиков -->
+<!-- Новая секция разработчиков -->
+<div class="developers-section animate delay-4 disabled-section">
+    <div class="section-header">
+        <h2 data-lang="ru">Наша команда разработчиков</h2>
+        <h2 data-lang="en">Our Development Team</h2>
+        <div class="new-badge-container">
+            <span class="new-badge" data-lang="ru">В разработке</span>
+            <span class="new-badge" data-lang="en">In development</span>
+        </div>
+    </div>
+    <p data-lang="ru">Люди, которые создают Shark Concept</p>
+    <p data-lang="en">People who create Shark Concept</p>
+    
+    <div class="developers-grid">
+        <div class="developer-card disabled-card">
+            <div class="developer-avatar">
+                <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="developer-info">
+                <h4>Noah</h4>
+                <p class="developer-role" data-lang="ru">Главный разработчик</p>
+                <p class="developer-role" data-lang="en">Lead Developer</p>
+                <div class="developer-skills">
+                    <span class="skill-tag">Html+css</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Python</span>
                 </div>
             </div>
         </div>
+        
+        <div class="developer-card disabled-card">
+            <div class="developer-avatar">
+                <span class="material-symbols-outlined">person</span>
+            </div>
+            <div class="developer-info">
+                <h4>Sergey</h4>
+                <p class="developer-role" data-lang="ru">Бэкенд разработчик</p>
+                <p class="developer-role" data-lang="en">Backend Developer</p>
+                <div class="developer-skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Database</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="join-team disabled-card">
+        <h3 data-lang="ru">Хотите присоединиться к команде?</h3>
+        <h3 data-lang="en">Want to join the team?</h3>
+        <p data-lang="ru">Мы всегда рады новым разработчикам</p>
+        <p data-lang="en">We're always open to new developers</p>
+        <a href="https://t.me/noah_commit" target="_blank" class="styled-button primary disabled-button">
+            <span class="material-symbols-outlined">work</span>
+            <span data-lang="ru">Связаться с нами</span>
+            <span data-lang="en">Contact Us</span>
+        </a>
+    </div>
+</div>
     </section>
 
     <!-- Модальные окна для пожертвований -->
@@ -531,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
     
     //Наблюдаем за элементами с задержкой анимации
-    document.querySelectorAll('.donation-method, .info-card, .impact-item, .supporter-card, .stat-item').forEach((card, index) => {
+    document.querySelectorAll('.donation-method, .info-card, .impact-item, .supporter-card, .stat-item, .developer-card').forEach((card, index) => {
         setTimeout(() => {
             observer.observe(card);
         }, index * 100);
@@ -682,7 +722,7 @@ if (isMobileDevice()) {
         });
     }, mobileObserverOptions);
     
-    document.querySelectorAll('.donation-method, .info-card, .impact-item, .supporter-card, .stat-item').forEach(card => {
+    document.querySelectorAll('.donation-method, .info-card, .impact-item, .supporter-card, .stat-item, .developer-card').forEach(card => {
         mobileObserver.observe(card);
     });
 }
@@ -729,6 +769,26 @@ window.onclick = function(event) {
         closeOtherModal();
     }
 }
+// Блокировка кликов в неактивной секции разработчиков
+    const disabledSection = document.querySelector('.disabled-section');
+    if (disabledSection) {
+        disabledSection.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+        
+        // Блокировка всех ссылок внутри секции
+        const disabledLinks = disabledSection.querySelectorAll('a');
+        disabledLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        });
+    }
+
     </script>
     <style>
         /* Стили для секции пожертвований */
@@ -1027,6 +1087,121 @@ window.onclick = function(event) {
             margin: 0 0 20px 0;
         }
         
+        /* Стили для новой секции разработчиков */
+        .developers-section {
+            margin-top: 60px;
+            padding: 40px;
+            border-radius: var(--shape-corner-large);
+            backdrop-filter: blur(12px) brightness(0.8);
+            -webkit-backdrop-filter: blur(12px) brightness(0.8);
+            background-color: var(--md-sys-color-surface) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+        
+        .developers-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            color: var(--md-sys-color-primary);
+        }
+        
+        .developers-section > p {
+            color: var(--md-sys-color-on-surface-variant);
+            margin: 0 0 40px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .developer-card {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            border-radius: var(--shape-corner-medium);
+            backdrop-filter: blur(12px) brightness(0.8);
+            -webkit-backdrop-filter: blur(12px) brightness(0.8);
+            background-color: var(--md-sys-color-surface-variant) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            transition: transform 0.3s ease;
+        }
+        
+        .developer-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .developer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #7BA7FF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .developer-avatar .material-symbols-outlined {
+            font-size: 2rem;
+        }
+        
+        .developer-info h4 {
+            margin: 0 0 8px 0;
+            color: var(--md-sys-color-on-surface);
+            font-size: 1.2rem;
+        }
+        
+        .developer-info p {
+            margin: 0 0 12px 0;
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: 0.9rem;
+        }
+        
+        .developer-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .join-team {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--shape-corner-medium);
+            backdrop-filter: blur(12px) brightness(0.8);
+            -webkit-backdrop-filter: blur(12px) brightness(0.8);
+            background-color: var(--md-sys-color-surface-variant) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+        
+        .join-team h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: var(--md-sys-color-on-surface);
+        }
+        
+        .join-team p {
+            color: var(--md-sys-color-on-surface-variant);
+            margin: 0 0 20px 0;
+        }
+        
         /* Стили для модальных окон */
         .modal-overlay {
             display: none;
@@ -1148,6 +1323,9 @@ window.onclick = function(event) {
         body.light-theme .supporters-section,
         body.light-theme .supporter-card,
         body.light-theme .become-supporter,
+        body.light-theme .developers-section,
+        body.light-theme .developer-card,
+        body.light-theme .join-team,
         body.light-theme .modal-content,
         body.light-theme .modal-note,
         body.light-theme .crypto-item,
@@ -1197,6 +1375,20 @@ window.onclick = function(event) {
                 grid-template-columns: 1fr;
             }
             
+            .developers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .developer-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .developer-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
             .modal-content {
                 margin: 0 10px;
             }
@@ -1231,7 +1423,95 @@ window.onclick = function(event) {
             .supporters-section {
                 padding: 20px;
             }
+            
+            .developers-section {
+                padding: 20px;
+            }
         }
+        /* Стили для неактивной секции */
+.disabled-section {
+    position: relative;
+    opacity: 0.6;
+    filter: grayscale(0.7);
+    pointer-events: none;
+    user-select: none;
+}
+
+.disabled-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    border-radius: var(--shape-corner-large);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.disabled-card {
+    opacity: 0.7;
+    filter: brightness(0.8);
+    transform: none !important;
+}
+
+.disabled-card:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.disabled-button {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}
+
+.disabled-button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Для светлой темы */
+body.light-theme .disabled-section::before {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+    );
+}
+
+/* Анимация пульсации для индикации "в разработке" */
+@keyframes pulse-disabled {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.disabled-section {
+    animation: pulse-disabled 3s ease-in-out infinite;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .disabled-section {
+        opacity: 0.7;
+    }
+    
+    .disabled-card {
+        opacity: 0.8;
+    }
+}
     </style>
 </body>
 </html>
