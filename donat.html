@@ -1380,6 +1380,176 @@
                 padding: 20px;
             }
         }
+        /* Анимированные лепестки сакуры */
+.sakura-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.sakura-petal {
+    position: absolute;
+    top: -50px;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #ffb7c5 0%, #ff69b4 50%, #ff1493 100%);
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(45deg);
+    opacity: 0.7;
+    animation: fall linear infinite;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.sakura-petal::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.sakura-petal:nth-child(odd) {
+    background: linear-gradient(135deg, #ffc0cb 0%, #ff91a4 50%, #ff69b4 100%);
+}
+
+.sakura-petal:nth-child(3n) {
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 50%, #ff91a4 100%);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg) rotateX(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg) rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+/* Разные скорости и задержки для лепестков */
+.sakura-petal:nth-child(1) { left: 5%; animation-duration: 15s; animation-delay: 0s; }
+.sakura-petal:nth-child(2) { left: 15%; animation-duration: 18s; animation-delay: 2s; }
+.sakura-petal:nth-child(3) { left: 25%; animation-duration: 12s; animation-delay: 1s; }
+.sakura-petal:nth-child(4) { left: 35%; animation-duration: 16s; animation-delay: 3s; }
+.sakura-petal:nth-child(5) { left: 45%; animation-duration: 14s; animation-delay: 0.5s; }
+.sakura-petal:nth-child(6) { left: 55%; animation-duration: 17s; animation-delay: 2.5s; }
+.sakura-petal:nth-child(7) { left: 65%; animation-duration: 13s; animation-delay: 1.5s; }
+.sakura-petal:nth-child(8) { left: 75%; animation-duration: 19s; animation-delay: 0.8s; }
+.sakura-petal:nth-child(9) { left: 85%; animation-duration: 11s; animation-delay: 3.2s; }
+.sakura-petal:nth-child(10) { left: 95%; animation-duration: 15s; animation-delay: 1.2s; }
+.sakura-petal:nth-child(11) { left: 10%; animation-duration: 16s; animation-delay: 2.8s; }
+.sakura-petal:nth-child(12) { left: 20%; animation-duration: 14s; animation-delay: 0.3s; }
+.sakura-petal:nth-child(13) { left: 30%; animation-duration: 18s; animation-delay: 1.8s; }
+.sakura-petal:nth-child(14) { left: 40%; animation-duration: 12s; animation-delay: 2.2s; }
+.sakura-petal:nth-child(15) { left: 50%; animation-duration: 17s; animation-delay: 0.7s; }
+.sakura-petal:nth-child(16) { left: 60%; animation-duration: 13s; animation-delay: 3s; }
+.sakura-petal:nth-child(17) { left: 70%; animation-duration: 15s; animation-delay: 1.4s; }
+.sakura-petal:nth-child(18) { left: 80%; animation-duration: 19s; animation-delay: 2.6s; }
+.sakura-petal:nth-child(19) { left: 90%; animation-duration: 11s; animation-delay: 0.9s; }
+.sakura-petal:nth-child(20) { left: 8%; animation-duration: 16s; animation-delay: 2.1s; }
+
+/* Дополнительные лепестки для большей плотности */
+.sakura-petal:nth-child(21) { left: 18%; animation-duration: 14s; animation-delay: 3.5s; }
+.sakura-petal:nth-child(22) { left: 28%; animation-duration: 17s; animation-delay: 1.1s; }
+.sakura-petal:nth-child(23) { left: 38%; animation-duration: 13s; animation-delay: 2.9s; }
+.sakura-petal:nth-child(24) { left: 48%; animation-duration: 15s; animation-delay: 0.4s; }
+.sakura-petal:nth-child(25) { left: 58%; animation-duration: 18s; animation-delay: 2.3s; }
+.sakura-petal:nth-child(26) { left: 68%; animation-duration: 12s; animation-delay: 1.7s; }
+.sakura-petal:nth-child(27) { left: 78%; animation-duration: 16s; animation-delay: 3.1s; }
+.sakura-petal:nth-child(28) { left: 88%; animation-duration: 14s; animation-delay: 0.6s; }
+.sakura-petal:nth-child(29) { left: 98%; animation-duration: 19s; animation-delay: 2.4s; }
+.sakura-petal:nth-child(30) { left: 12%; animation-duration: 13s; animation-delay: 1.9s; }
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .sakura-petal {
+        width: 12px;
+        height: 12px;
+    }
+    
+    /* Меньше лепестков на мобильных для производительности */
+    .sakura-petal:nth-child(n+15) {
+        display: none;
+    }
+}
+
+/* Для светлой темы - более нежные лепестки */
+body.light-theme .sakura-petal {
+    background: linear-gradient(135deg, #ffe4e9 0%, #ffb6c1 50%, #ff91a4 100%);
+    opacity: 0.6;
+    box-shadow: 0 0 8px rgba(255, 182, 193, 0.4);
+}
+
+body.light-theme .sakura-petal:nth-child(odd) {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffd1dc 50%, #ffb6c1 100%);
+}
+
+body.light-theme .sakura-petal:nth-child(3n) {
+    background: linear-gradient(135deg, #fff8f8 0%, #ffe4e9 50%, #ffd1dc 100%);
+}
+
+/* Для красно-синей темы - подходящие цвета */
+body.red-blue-theme .sakura-petal {
+    background: linear-gradient(135deg, #ff9eb5 0%, #ff6b7a 50%, #ff4757 100%);
+    box-shadow: 0 0 10px rgba(255, 107, 122, 0.3);
+}
+
+body.red-blue-theme .sakura-petal:nth-child(odd) {
+    background: linear-gradient(135deg, #ffb4c8 0%, #ff8fa3 50%, #ff6b7a 100%);
+}
+
+body.red-blue-theme .sakura-petal:nth-child(3n) {
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffb4c8 50%, #ff8fa3 100%);
+}
     </style>
+        <!-- Анимированные лепестки сакуры -->
+    <div class="sakura-petals">
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+        <div class="sakura-petal"></div>
+    </div>
 </body>
 </html>
