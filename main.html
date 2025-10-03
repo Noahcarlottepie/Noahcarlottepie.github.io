@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="stylesheet" href="style_don+main.css?v=2.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поддержать SHARK-CONCEPT</title>
-    
-    <link rel="stylesheet" href="style_don+main.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>SHARK-CONCEPT</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Orbitron:wght@700;800&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Меню -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104348574', 'ym');
+
+        ym(104348574, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/104348574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+     
+    <!--меню-->
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-header">
@@ -23,6 +36,7 @@
             </button>
         </div>
         <nav class="mobile-nav">
+            <!-- Кнопка Moderation -->
             <a href="https://t.me/prelude_commit" target="_blank" class="mobile-nav-link moderation-link">
                 <span class="material-symbols-outlined">shield</span>
                 <span data-lang="ru">Модерация</span>
@@ -31,6 +45,7 @@
             
             <div class="mobile-menu-divider"></div>
             
+            <!-- Меню настроек -->
             <a href="#" class="mobile-nav-link" id="mobile-theme-toggle">
                 <span class="material-symbols-outlined">dark_mode</span>
                 <span data-lang="ru">Ночной режим</span>
@@ -63,7 +78,7 @@
         </nav>
     </div>
 
-    <!-- Хедер -->
+    <!--Хедер-->
     <header class="main-header">
         <div class="logo-container">
             <a href="index.html" class="logo">SHARK-CONCEPT</a>
@@ -83,10 +98,10 @@
                     <span class="mdc-button__label" data-lang="en">Settings</span>
                 </a>
                 <div class="dropdown-content">
-                    <a href="index.html">
-                        <span class="material-symbols-outlined">home</span>
-                        <span data-lang="ru">Вернуться на главную</span>
-                        <span data-lang="en">Back to Home</span>
+                    <a href="https://t.me/sharkNewsFea" target="_blank">
+                        <span class="material-symbols-outlined">featured_play_list</span>
+                        <span data-lang="ru">Новости Shark</span>
+                        <span data-lang="en">Shark News</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" id="theme-toggle">
@@ -104,11 +119,6 @@
                         <span data-lang="ru">Анимации</span>
                         <span data-lang="en">Animations</span>
                     </a>
-                    <a href="https://t.me/sharkNewsFea" target="_blank">
-                        <span class="material-symbols-outlined">featured_play_list</span>
-                        <span data-lang="ru">Функции Shark</span>
-                        <span data-lang="en">Shark Features</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="https://t.me/prelude_commit" target="_blank">
                         <span class="material-symbols-outlined">bug_report</span>
@@ -120,358 +130,137 @@
         </div>
     </header>
 
-    <!-- Секция пожертвований -->
-    <section class="donation-section">
-        <div class="donation-content">
-            <h1 class="donation-title animate" data-lang="ru">Поддержите развитие Shark</h1>
-            <h1 class="donation-title animate" data-lang="en">Support Shark Development</h1>
-            <p class="donation-subtitle animate delay-1" data-lang="ru">Ваша поддержка поможет нам быстрее выпустить платформу и сделать её ещё лучше!</p>
-            <p class="donation-subtitle animate delay-1" data-lang="en">Your support will help us release the platform faster and make it even better!</p>
-            
-            <div class="donation-stats animate delay-1">
-                <div class="stat-item">
-                    <span class="stat-number">38%</span>
-                    <span data-lang="ru">готовности проекта</span>
-                    <span data-lang="en">project readiness</span>
+    <!--гл секция-->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title animate" data-lang="ru">Погрузитесь в будущее социальных сетей</h1>
+            <h1 class="hero-title animate" data-lang="en">Dive Into The Future of Social Networking</h1>
+            <p class="hero-subtitle animate delay-1" data-lang="ru">Shark - это современная социальная платформа, где вы сможете общаться, делиться и находить контент, который важен для вас. Скоро...</p>
+            <p class="hero-subtitle animate delay-1" data-lang="en">Shark is a modern social platform where you can connect, share, and discover content that matters to you. Coming soon...</p>
+            <div class="hero-buttons animate delay-2">
+                <div class="button-container">
+                    <span class="coming-soon-badge" data-lang="ru">Скоро</span>
+                    <span class="coming-soon-badge" data-lang="en">Coming Soon</span>
+                    <a href="{{url_for('register')}}" class="styled-button primary disabled-button">
+                        <span class="material-symbols-outlined button-icon">rocket_launch</span>
+                        <span data-lang="ru">Начать</span>
+                        <span data-lang="en">Get Started</span>
+                    </a>
                 </div>
-                <div class="stat-item">
-                    <div class="days-counter-container">
-                        <div class="days-counter-circle">
-                            <svg class="progress-ring" width="80" height="80">
-                                <circle class="progress-ring-background" cx="40" cy="40" r="36" stroke-width="4"></circle>
-                                <circle class="progress-ring-circle" cx="40" cy="40" r="36" stroke-width="4"></circle>
-                            </svg>
-                            <div class="days-counter-number" id="days-counter">0</div>
-                        </div>
-                    </div>
-                    <span data-lang="ru">дней до релиза</span>
-                    <span data-lang="en">days until release</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">15+</span>
-                    <span data-lang="ru">функций в работе</span>
-                    <span data-lang="en">features in progress</span>
-                </div>
-            </div>
-            
-            <div class="donation-methods animate delay-2">
-                <div class="donation-method">
-                    <div class="method-icon">
-                        <span class="material-symbols-outlined">credit_card</span>
-                    </div>
-                    <h3 data-lang="ru">Банковская карта</h3>
-                    <h3 data-lang="en">Bank Card</h3>
-                    <p data-lang="ru">Перевод с любой карты</p>
-                    <p data-lang="en">Secure transfer from any card</p>
-                    <button class="styled-button primary" onclick="openCardModal()">
-                        <span data-lang="ru">Пожертвовать</span>
-                        <span data-lang="en">Donate</span>
-                    </button>
-                </div>
-                
-                <div class="donation-method">
-                    <div class="method-icon">
-                        <span class="material-symbols-outlined">account_balance</span>
-                    </div>
-                    <h3 data-lang="ru">Криптовалюта</h3>
-                    <h3 data-lang="en">Cryptocurrency</h3>
-                    <p data-lang="ru">BTC, ETH, USDT и другие</p>
-                    <p data-lang="en">BTC, ETH, USDT and others</p>
-                    <button class="styled-button primary" onclick="openCryptoModal()">
-                        <span data-lang="ru">Пожертвовать</span>
-                        <span data-lang="en">Donate</span>
-                    </button>
-                </div>
-                
-                <div class="donation-method">
-                    <div class="method-icon">
-                        <span class="material-symbols-outlined">qr_code</span>
-                    </div>
-                    <h3 data-lang="ru">Другие способы</h3>
-                    <h3 data-lang="en">Other Methods</h3>
-                    <p data-lang="ru">QIWI, ЮMoney и другие</p>
-                    <p data-lang="en">QIWI, YooMoney and others</p>
-                    <button class="styled-button primary" onclick="openOtherModal()">
-                        <span data-lang="ru">Пожертвовать</span>
-                        <span data-lang="en">Donate</span>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="donation-impact animate delay-3">
-                <h2 data-lang="ru">Как ваша поддержка поможет проекту?</h2>
-                <h2 data-lang="en">How your support will help the project?</h2>
-                
-                <div class="impact-grid">
-                    <div class="impact-item">
-                        <span class="material-symbols-outlined">rocket_launch</span>
-                        <h4 data-lang="ru">Ускорение разработки</h4>
-                        <h4 data-lang="en">Development Acceleration</h4>
-                        <p data-lang="ru">Больше ресурсов для команды = быстрее релиз</p>
-                        <p data-lang="en">More resources for the team = faster release</p>
-                    </div>
-                    <div class="impact-item">
-                        <span class="material-symbols-outlined">dns</span>
-                        <h4 data-lang="ru">Мощный хостинг</h4>
-                        <h4 data-lang="en">Powerful Hosting</h4>
-                        <p data-lang="ru">Стабильная работа платформы для всех пользователей</p>
-                        <p data-lang="en">Stable platform operation for all users</p>
-                    </div>
-                    <div class="impact-item">
-                        <span class="material-symbols-outlined">security</span>
-                        <h4 data-lang="ru">Безопасность</h4>
-                        <h4 data-lang="en">Security</h4>
-                        <p data-lang="ru">Защита данных пользователей и системы</p>
-                        <p data-lang="en">Protection of user data and system</p>
-                    </div>
-                    <div class="impact-item">
-                        <span class="material-symbols-outlined">code</span>
-                        <h4 data-lang="ru">Новые функции</h4>
-                        <h4 data-lang="en">New Features</h4>
-                        <p data-lang="ru">Реализация большего количества возможностей</p>
-                        <p data-lang="en">Implementation of more features</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="donation-info animate delay-3">
-                <div class="info-card">
-                    <span class="material-symbols-outlined">verified</span>
-                    <div>
-                        <h4 data-lang="ru">Безопасные платежи</h4>
-                        <h4 data-lang="en">Secure Payments</h4>
-                        <p data-lang="ru">Все транзакции защищены шифрованием</p>
-                        <p data-lang="en">All transactions are encrypted</p>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <span class="material-symbols-outlined">receipt_long</span>
-                    <div>
-                        <h4 data-lang="ru">Прозрачность</h4>
-                        <h4 data-lang="en">Transparency</h4>
-                        <p data-lang="ru">Отчеты о расходовании средств</p>
-                        <p data-lang="en">Reports on fund usage</p>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <span class="material-symbols-outlined">favorite</span>
-                    <div>
-                        <h4 data-lang="ru">Признательность</h4>
-                        <h4 data-lang="en">Appreciation</h4>
-                        <p data-lang="ru">Особая благодарность всем спонсорам</p>
-                        <p data-lang="en">Special thanks to all sponsors</p>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <span class="material-symbols-outlined">coffee</span>
-                    <div>
-                        <h4 data-lang="ru">На что идут средства</h4>
-                        <h4 data-lang="en">Where funds go</h4>
-                        <p data-lang="ru">Кофе для разработчиков и оплата хостинга</p>
-                        <p data-lang="en">Coffee for developers and hosting payment</p>
-                    </div>
-                </div>
-            </div>
-            
-           <!-- Секция разработчиков - компактная версия -->
-<div class="developers-section animate delay-4">
-    <h2 data-lang="ru">Наша команда разработчиков</h2>
-    <h2 data-lang="en">Our Development Team</h2>
-    <p data-lang="ru">Люди и не только, которые делают сайт</p>
-    <p data-lang="en">People and others who make the site</p>
-    
-    <div class="developers-grid">
-        <div class="developer-card">
-            <div class="developer-avatar">
-                <span class="material-symbols-outlined">code</span>
-            </div>
-            <div class="developer-info">
-                <h4>Noah</h4>
-                <p class="developer-role" data-lang="ru">Главный разработчик</p>
-                <p class="developer-role" data-lang="en">Lead Developer</p>
-                <div class="developer-skills">
-                    <span class="skill-tag">Frontend</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">UI/UX</span>
-                </div>
+                <a href="#features" class="styled-button secondary">
+                    <span class="material-symbols-outlined button-icon">info</span>
+                    <span data-lang="ru">Узнать больше</span>
+                    <span data-lang="en">Learn More</span>
+                </a>
             </div>
         </div>
-        
-        <div class="developer-card">
-            <div class="developer-avatar">
-                <span class="material-symbols-outlined">storage</span>
-            </div>
-            <div class="developer-info">
-                <h4>Sergey</h4>
-                <p class="developer-role" data-lang="ru">Бэкенд разработчик</p>
-                <p class="developer-role" data-lang="en">Backend Developer</p>
-                <div class="developer-skills">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Database</span>
-                    <span class="skill-tag">API</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="developer-card">
-            <div class="developer-avatar">
-                <span class="material-symbols-outlined">pets</span>
-            </div>
-            <div class="developer-info">
-                <h4>Cat</h4>
-                <p class="developer-role" data-lang="ru">SEO специалист</p>
-                <p class="developer-role" data-lang="en">SEO Specialist</p>
-                <div class="developer-skills">
-                    <span class="skill-tag">SEO</span>
-                    <span class="skill-tag">Analytics</span>
-                    <span class="skill-tag">Purring</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
- <div class="join-team">
-    <h3 data-lang="ru">Хотите присоединиться к команде?</h3>
-    <h3 data-lang="en">Want to join the team?</h3>
-    <p data-lang="ru">Мы всегда рады новым разработчикам</p>
-    <p data-lang="en">We're always open to new developers</p>
-    <button class="styled-button primary" onclick="openContactModal()">
-        <span class="material-symbols-outlined">work</span>
-        <span data-lang="ru">Связаться с нами</span>
-        <span data-lang="en">Contact Us</span>
-    </button>
-</div>
     </section>
 
-    <!-- Модальные окна -->
-    <div id="card-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 data-lang="ru">Пожертвование картой</h2>
-                <h2 data-lang="en">Card Donation</h2>
-                <button class="modal-close" onclick="closeCardModal()">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p data-lang="ru">Для пожертвования картой свяжитесь с нами в Telegram:</p>
-                <p data-lang="en">For card donations, contact us on Telegram:</p>
-                <a href="https://t.me/prelude_commit" target="_blank" class="styled-button primary">
-                    <span class="material-symbols-outlined">send</span>
-                    <span>@prelude_commit</span>
-                </a>
-                <div class="modal-note">
-                    <span class="material-symbols-outlined">info</span>
-                    <p data-lang="ru">Мы предоставим реквизиты для безопасного перевода</p>
-                    <p data-lang="en">We will provide details for a secure transfer</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="crypto-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 data-lang="ru">Криптовалютное пожертвование</h2>
-                <h2 data-lang="en">Cryptocurrency Donation</h2>
-                <button class="modal-close" onclick="closeCryptoModal()">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p data-lang="ru">Для получения адресов криптокошельков свяжитесь с нами:</p>
-                <p data-lang="en">To get cryptocurrency wallet addresses, contact us:</p>
-                <a href="https://t.me/prelude_commit" target="_blank" class="styled-button primary">
-                    <span class="material-symbols-outlined">send</span>
-                    <span>@prelude_commit</span>
-                </a>
-                <div class="crypto-currencies">
-                    <div class="crypto-item">
-                        <span class="crypto-icon">₿</span>
-                        <span>Bitcoin (BTC)</span>
-                    </div>
-                    <div class="crypto-item">
-                        <span class="crypto-icon">Ξ</span>
-                        <span>Ethereum (ETH)</span>
-                    </div>
-                    <div class="crypto-item">
-                        <span class="crypto-icon">₮</span>
-                        <span>Tether (USDT)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="other-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 data-lang="ru">Другие способы пожертвования</h2>
-                <h2 data-lang="en">Other Donation Methods</h2>
-                <button class="modal-close" onclick="closeOtherModal()">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p data-lang="ru">Для получения информации о других способах пожертвования:</p>
-                <p data-lang="en">For information about other donation methods:</p>
-                <a href="https://t.me/prelude_commit" target="_blank" class="styled-button primary">
-                    <span class="material-symbols-outlined">send</span>
-                    <span>@prelude_commit</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div id="contact-modal" class="modal-overlay">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 data-lang="ru">Связаться с нами</h2>
-            <h2 data-lang="en">Contact Us</h2>
-            <button class="modal-close" onclick="closeContactModal()">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <div class="method-icon">
-                        <span class="material-symbols-outlined">send</span>
-                    </div>
-                    <h3>Telegram</h3>
-                    <p data-lang="ru">Основной способ связи с разработчиком</p>
-                    <p data-lang="en">The main way to contact the developer</p>
-                    <a href="https://t.me/prelude_commit" target="_blank" class="styled-button primary contact-button">
-                        <span class="material-symbols-outlined">send</span>
-                        <span>@prelude_commit</span>
-                    </a>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="method-icon">
-                        <span class="material-symbols-outlined">campaign</span>
-                    </div>
-                    <h3 data-lang="ru">Канал</h3>
-                    <h3 data-lang="en">Channel</h3>
-                    <p data-lang="ru">Официальный канал проекта</p>
-                    <p data-lang="en">Official project channel</p>
-                    <a href="https://t.me/sharkNewsFea" target="_blank" class="styled-button primary contact-button">
-                        <span class="material-symbols-outlined">campaign</span>
-                        <span data-lang="ru">Shark Channel</span>
-                        <span data-lang="en">Shark Channel</span>
-                    </a>
-                </div>
+    <!--Секция информации-->
+    <section id="features" class="features-section">
+        <h2 class="section-title" data-lang="ru">Почему выбрать Shark?</h2>
+        <h2 class="section-title" data-lang="en">Why Choose Shark?</h2>
+        <p class="section-subtitle" data-lang="ru">Откройте для себя функции, которые делают Shark хорошей платформой для вашего социального опыта</p>
+        <p class="section-subtitle" data-lang="en">Discover the features that make Shark the perfect platform for your social experience</p>
+        
+        <div class="features-grid">
+            <div class="feature-card animate">
+                <span class="material-symbols-outlined feature-icon">forum</span>
+                <h3 class="feature-title" data-lang="ru">Активные сообщества</h3>
+                <h3 class="feature-title" data-lang="en">Engaging Communities</h3>
+                <p class="feature-description" data-lang="ru">Вы сможете присоединиться к сообществам и общаться с единомышленниками.</p>
+                <p class="feature-description" data-lang="en">You will be able to join the communitys. And communicate with like-minded people.</p>
             </div>
             
-            <div class="modal-note">
-                <span class="material-symbols-outlined">info</span>
-                <p data-lang="ru">Мы ответим в течение 24 часов</p>
-                <p data-lang="en">We'll respond within 24 hours</p>
+            <div class="feature-card animate delay-1">
+                <span class="material-symbols-outlined feature-icon">trending_up</span>
+                <h3 class="feature-title" data-lang="ru">Сайт в разработке</h3>
+                <h3 class="feature-title" data-lang="en">Website under development</h3>
+                <p class="feature-description" data-lang="ru">Это означает, что вы можете внести вклад в создание сайта. Просто напишите одному из разработчиков)</p>
+                <p class="feature-description" data-lang="en">This means that you can contribute to the creation of the site. Just write to one of the developers)</p>
+            </div>
+            
+            <div class="feature-card animate delay-2">
+                <span class="material-symbols-outlined feature-icon">shield</span>
+                <h3 class="feature-title" data-lang="ru">Конфиденциальность</h3>
+                <h3 class="feature-title" data-lang="en">Privacy Focused</h3>
+                <p class="feature-description" data-lang="ru">Ваша конфиденциальность - наш приоритет. Мы даем вам полный контроль над вашими данными.</p>
+                <p class="feature-description" data-lang="en">Your privacy is our priority. We give you full control over your data and who sees your content.</p>
+            </div>
+            
+            <div class="feature-card animate">
+                <span class="material-symbols-outlined feature-icon">design_services</span>
+                <h3 class="feature-title" data-lang="ru">Современный дизайн</h3>
+                <h3 class="feature-title" data-lang="en">Modern design</h3>
+                <p class="feature-description" data-lang="ru">Интересный и привлекательный дизайн ждет вас на нашем сайте. В разработке светлая и другие темы сайта)</p>
+                <p class="feature-description" data-lang="en">An interesting and catchy design greets you on our website. In development are light and other website themes)</p>
+            </div>
+            
+            <div class="feature-card animate delay-1">
+                <span class="material-symbols-outlined feature-icon">rocket_launch</span>
+                <h3 class="feature-title" data-lang="ru">Молниеносная скорость</h3>
+                <h3 class="feature-title" data-lang="en">Lightning Fast</h3>
+                <p class="feature-description" data-lang="ru">Оцените невероятно быструю производительность с нашей оптимизированной платформой.</p>
+                <p class="feature-description" data-lang="en">Experience blazing fast performance with our optimized platform that loads in milliseconds.</p>
+            </div>
+            
+            <div class="feature-card animate delay-2">
+                <span class="material-symbols-outlined feature-icon">groups</span>
+                <h3 class="feature-title" data-lang="ru">Настоящие связи</h3>
+                <h3 class="feature-title" data-lang="en">Real Connections</h3>
+                <p class="feature-description" data-lang="ru">Стройте значимые отношения с людьми, которые разделяют ваши интересы.</p>
+                <p class="feature-description" data-lang="en">Build meaningful relationships with people who share your interests, not just accumulate followers.</p>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-    <!-- Футер -->
+    <!--Секция подключения к нам-->
+    <section class="cta-section">
+        <h2 class="cta-title" data-lang="ru">Готовы присоединиться?</h2>
+        <h2 class="cta-title" data-lang="en">Ready to Dive In?</h2>
+        <p class="cta-text" data-lang="ru">Вы сможете присоединиться к нам скоро, с уважением, разработчик Sharks!</p>
+        <p class="cta-text" data-lang="en">You will be able to join us soon, with respect, the developer of Sharks!</p>
+        <div class="button-container">
+            <span class="coming-soon-badge" data-lang="ru">Скоро</span>
+            <span class="coming-soon-badge" data-lang="en">Coming Soon</span>
+            <a href="#" class="styled-button primary disabled-button">
+                <span class="material-symbols-outlined button-icon">person_add</span>
+                <span data-lang="ru">Создать аккаунт</span>
+                <span data-lang="en">Create Your Account</span>
+            </a>
+        </div>
+    </section>
+
+    <!--Секция поддержки авторов-->
+    <section class="support-section">
+        <h2 class="support-title" data-lang="ru">Поддержите создателей</h2>
+        <h2 class="support-title" data-lang="en">Support the Creators</h2>
+        <p class="support-text" data-lang="ru">Если вам нравится наш проект Shark, вы можете поддержать нас. Так сайт станет более функциональным, и его релиз будет быстрее!</p>
+        <p class="support-text" data-lang="en">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
+        <div class="support-options">
+             <div class="button-container">
+                <span class="new-badge" data-lang="ru">Новое!</span>
+                <span class="new-badge" data-lang="en">New!</span>
+                <a href="donat.html" class="styled-button accent">
+                    <span class="material-symbols-outlined button-icon">favorite</span>
+                    <span data-lang="ru">Пожертвовать</span>
+                    <span data-lang="en">Donate</span>
+                </a>
+            </div>
+            <a href="https://t.me/sharkNewsFea" target="_blank" class="styled-button secondary">
+                <span class="material-symbols-outlined button-icon">volunteer_activism</span>
+                <span data-lang="ru">Перейти в Telegram</span>
+                <span data-lang="en">Become a Telegram</span>
+            </a>
+            <a href="" class="styled-button secondary">
+                <span class="material-symbols-outlined button-icon">share</span>
+                <span data-lang="ru">Поделиться с друзьями</span>
+                <span data-lang="en">Share with Friends</span>
+            </a>
+        </div>
+    </section>
+
+    <!--Футер-->
     <footer class="footer">
         <div class="footer-grid">
             <div>
@@ -523,13 +312,13 @@
             &copy; 2025 Shark Social Platform. <span data-lang="ru">Все права защищены.</span><span data-lang="en">All rights reserved.</span>
         </div>
     </footer>
-
-    <!-- Плашка версии -->
+    
+    <!--Плашка версии внизу-->
     <div class="version-footer">
         <a href="#" data-lang="ru">Сайт скоро будет</a><a href="#" data-lang="en">WebSite coming soon</a> • 
         Shark Web V 2.0.1
     </div>
-
+    
     <!-- Анимированные лепестки сакуры -->
     <div class="sakura-petals">
         <div class="sakura-petal"></div>
@@ -566,57 +355,7 @@
 
     <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js"></script>
     <script>
-        // Функция для расчета дней до апреля следующего года
-        function calculateDaysToNextApril() {
-            const now = new Date();
-            const currentYear = now.getFullYear();
-            const currentMonth = now.getMonth();
-            
-            // Если сейчас уже апрель или позже, берем следующий год
-            const targetYear = currentMonth >= 3 ? currentYear + 1 : currentYear;
-            
-            // Дата 1 апреля целевого года
-            const targetDate = new Date(targetYear, 3, 1); // 3 = апрель (месяцы от 0 до 11)
-            
-            // Разница в миллисекундах
-            const diffTime = targetDate - now;
-            
-            // Конвертируем в дни
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
-            return diffDays;
-        }
-
-        // Функция для обновления счетчика дней и анимации круга
-        function updateDaysCounter() {
-            const days = calculateDaysToNextApril();
-            const daysCounter = document.getElementById('days-counter');
-            const progressCircle = document.querySelector('.progress-ring-circle');
-            
-            // Обновляем число дней
-            daysCounter.textContent = days;
-            
-            // Рассчитываем прогресс для анимации круга (максимум 365 дней)
-            const maxDays = 365;
-            const progress = Math.min((maxDays - days) / maxDays, 1);
-            const circumference = 2 * Math.PI * 36;
-            const offset = circumference - (progress * circumference);
-            
-            // Применяем анимацию к кругу
-            progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-            progressCircle.style.strokeDashoffset = offset;
-            
-            // Добавляем класс для плавной анимации
-            progressCircle.style.transition = 'stroke-dashoffset 1s ease-in-out';
-        }
-
-        // Обновляем счетчик при загрузке страницы
         document.addEventListener('DOMContentLoaded', () => {
-            updateDaysCounter();
-            
-            // Обновляем счетчик каждую минуту (на случай, если пользователь оставит страницу открытой)
-            setInterval(updateDaysCounter, 60000);
-
             const buttons = document.querySelectorAll('.mdc-button');
             buttons.forEach(button => {
                 mdc.ripple.MDCRipple.attachTo(button);
@@ -628,8 +367,11 @@
             function setLanguage(lang) {
                 currentLanguage = lang;
                 localStorage.setItem('language', lang);
+                
+                // Обновляем атрибут lang для HTML
                 document.documentElement.lang = lang;
                 
+                // Показываем/скрываем элементы с правильным языком
                 document.querySelectorAll('[data-lang]').forEach(element => {
                     if (element.getAttribute('data-lang') === lang) {
                         element.style.display = '';
@@ -638,6 +380,7 @@
                     }
                 });
                 
+                // Обновляем текст кнопки языка
                 updateLanguageButton();
             }
             
@@ -646,6 +389,7 @@
                 const mobileLanguageButton = document.getElementById('mobile-language-toggle');
                 
                 if (languageButton) {
+                    const languageIcon = languageButton.querySelector('.material-symbols-outlined');
                     if (currentLanguage === 'ru') {
                         languageButton.innerHTML = '<span class="material-symbols-outlined">language</span>English';
                     } else {
@@ -654,6 +398,7 @@
                 }
                 
                 if (mobileLanguageButton) {
+                    const mobileLanguageIcon = mobileLanguageButton.querySelector('.material-symbols-outlined');
                     if (currentLanguage === 'ru') {
                         mobileLanguageButton.innerHTML = '<span class="material-symbols-outlined">language</span>English';
                     } else {
@@ -688,7 +433,7 @@
             // Устанавливаем язык при загрузке
             setLanguage(currentLanguage);
             
-            // Меню
+            //меню
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -704,12 +449,12 @@
             mobileMenuClose.addEventListener('click', toggleMobileMenu);
             mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
             
-            // Закрытие меню при клике на ссылки
+            //Закрытие меню при клике на ссылки
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
                 link.addEventListener('click', toggleMobileMenu);
             });
             
-            // Анимация появления элементов при скролле
+            //Анимация появления элементов при скролле
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -723,14 +468,14 @@
                 });
             }, observerOptions);
             
-            // Наблюдаем за элементами с задержкой анимации
-            document.querySelectorAll('.donation-method, .info-card, .impact-item, .stat-item, .developer-card').forEach((card, index) => {
+            //Наблюдаем за элементами с задержкой анимации
+            document.querySelectorAll('.feature-card').forEach((card, index) => {
                 setTimeout(() => {
                     observer.observe(card);
                 }, index * 100);
             });
             
-            // Управление выпадающим меню настроек
+            //Управление выпадающим меню настроек
             const settingsDropdown = document.getElementById('settings-dropdown');
             const settingsButton = document.getElementById('settings-button');
             
@@ -740,18 +485,18 @@
                 settingsDropdown.classList.toggle('show');
             });
             
-            // Закрытие меню при клике вне его
+            //Закрытие меню при клике вне его
             document.addEventListener('click', (e) => {
                 if (!settingsDropdown.contains(e.target)) {
                     settingsDropdown.classList.remove('show');
                 }
             });
             
-            // Функция переключения темы
+            //Функция переключения темы
             function toggleTheme() {
                 document.body.classList.toggle('light-theme');
                 
-                // Обновляем текст кнопки
+                //Обновляем текст кнопки
                 const themeButton = document.getElementById('theme-toggle');
                 if (themeButton) {
                     const themeIcon = themeButton.querySelector('.material-symbols-outlined');
@@ -762,17 +507,17 @@
                         themeIcon.textContent = 'dark_mode';
                         themeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span><span data-lang="ru">Ночной режим</span><span data-lang="en">Night Mode</span>';
                     }
-                    setLanguage(currentLanguage);
+                    setLanguage(currentLanguage); // Обновляем язык после изменения HTML
                 }
                 
-                // Обновляем иконку в мобильном меню
+                //Обновляем иконку в мобильном меню
                 updateMobileThemeIcon();
                 
-                // Сохраняем выбор пользователя
+                //Сохраняем выбор пользователя
                 localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
             }
             
-            // Функция для обновления иконки темы в мобильном меню
+            //Функция для обновления иконки темы в мобильном меню
             function updateMobileThemeIcon() {
                 const mobileThemeButton = document.getElementById('mobile-theme-toggle');
                 if (!mobileThemeButton) return;
@@ -786,10 +531,10 @@
                     themeIcon.textContent = 'dark_mode';
                     mobileThemeButton.innerHTML = '<span class="material-symbols-outlined">dark_mode</span><span data-lang="ru">Ночной режим</span><span data-lang="en">Night Mode</span>';
                 }
-                setLanguage(currentLanguage);
+                setLanguage(currentLanguage); // Обновляем язык после изменения HTML
             }
             
-            // Обработчик клика по кнопке темы
+            //Обработчик клика по кнопке темы
             const themeButton = document.getElementById('theme-toggle');
             if (themeButton) {
                 themeButton.addEventListener('click', function(e) {
@@ -799,7 +544,7 @@
                 });
             }
             
-            // Обработчик для мобильной кнопки темы
+            //Обработчик для мобильной кнопки темы
             const mobileThemeButton = document.getElementById('mobile-theme-toggle');
             if (mobileThemeButton) {
                 mobileThemeButton.addEventListener('click', function(e) {
@@ -808,12 +553,12 @@
                 });
             }
             
-            // Проверяем сохраненную тему при загрузке
+            //Проверяем сохраненную тему при загрузке
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'light') {
                 document.body.classList.add('light-theme');
                 
-                // Обновляем текст кнопки
+                //Обновляем текст кнопки
                 const themeButton = document.getElementById('theme-toggle');
                 if (themeButton) {
                     const themeIcon = themeButton.querySelector('.material-symbols-outlined');
@@ -822,10 +567,10 @@
                 }
             }
             
-            // Обновляем иконку при загрузке
+            //Обновляем иконку при загрузке
             updateMobileThemeIcon();
             
-            // Добавляем обработчики для всех ссылок в выпадающем меню
+            //Добавляем обработчики для всех ссылок в выпадающем меню
             const dropdownLinks = document.querySelectorAll('.dropdown-content a');
             dropdownLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -861,6 +606,7 @@
             
             // Оптимизация для мобильных устройств
             if (isMobileDevice()) {
+                // Используем другое имя для наблюдателя mobileObserver
                 const mobileObserverOptions = {
                     threshold: 0.05,
                     rootMargin: '0px 0px -30px 0px'
@@ -874,7 +620,7 @@
                     });
                 }, mobileObserverOptions);
                 
-                document.querySelectorAll('.donation-method, .info-card, .impact-item, .stat-item, .developer-card').forEach(card => {
+                document.querySelectorAll('.feature-card').forEach(card => {
                     mobileObserver.observe(card);
                 });
             }
@@ -947,61 +693,6 @@
             // Обновляем текст кнопок анимаций при загрузке
             updateAnimationsButton();
         });
-
-        // Функции для модальных окон
-        function openCardModal() {
-            document.getElementById('card-modal').style.display = 'flex';
-        }
-
-        function closeCardModal() {
-            document.getElementById('card-modal').style.display = 'none';
-        }
-
-        function openCryptoModal() {
-            document.getElementById('crypto-modal').style.display = 'flex';
-        }
-
-        function closeCryptoModal() {
-            document.getElementById('crypto-modal').style.display = 'none';
-        }
-
-        function openOtherModal() {
-            document.getElementById('other-modal').style.display = 'flex';
-        }
-
-        function closeOtherModal() {
-            document.getElementById('other-modal').style.display = 'none';
-        }
-
-        // Функции для модального окна связи
-        function openContactModal() {
-            document.getElementById('contact-modal').style.display = 'flex';
-        }
-
-        function closeContactModal() {
-            document.getElementById('contact-modal').style.display = 'none';
-        }
-
-        // Закрытие модальных окон при клике вне их
-        window.onclick = function(event) {
-            const cardModal = document.getElementById('card-modal');
-            const cryptoModal = document.getElementById('crypto-modal');
-            const otherModal = document.getElementById('other-modal');
-            const contactModal = document.getElementById('contact-modal');
-            
-            if (event.target === cardModal) {
-                closeCardModal();
-            }
-            if (event.target === cryptoModal) {
-                closeCryptoModal();
-            }
-            if (event.target === otherModal) {
-                closeOtherModal();
-            }
-            if (event.target === contactModal) {
-                closeContactModal();
-            }
-        }
     </script>
 </body>
 </html>
