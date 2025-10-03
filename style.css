@@ -2164,3 +2164,41 @@ body.light-theme .crypto-item {
         stroke-width: 3;
     }
 }
+/* Плавная прокрутка для всех якорных ссылок */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Дополнительные стили для плавного перехода к секциям */
+section {
+    scroll-margin-top: 80px; /* Отступ для фиксированного хедера */
+}
+
+/* Анимация для плавного появления секции при скролле */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Класс для анимированных элементов */
+.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
+}
