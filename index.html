@@ -231,34 +231,42 @@
         </div>
     </section>
 
-    <!--Секция поддержки авторов-->
-    <section class="support-section">
-        <h2 class="support-title" data-lang="ru">Поддержите создателей</h2>
-        <h2 class="support-title" data-lang="en">Support the Creators</h2>
-        <p class="support-text" data-lang="ru">Если вам нравится наш проект Shark, вы можете поддержать нас. Так сайт станет более функциональным, и его релиз будет быстрее!</p>
-        <p class="support-text" data-lang="en">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
-        <div class="support-options">
-             <div class="button-container">
-                <span class="new-badge" data-lang="ru">Новое!</span>
-                <span class="new-badge" data-lang="en">New!</span>
-                <a href="donat.html" class="styled-button accent">
-                    <span class="material-symbols-outlined button-icon">favorite</span>
-                    <span data-lang="ru">Пожертвовать</span>
-                    <span data-lang="en">Donate</span>
-                </a>
-            </div>
-            <a href="https://t.me/sharkNewsFea" target="_blank" class="styled-button secondary">
-                <span class="material-symbols-outlined button-icon">volunteer_activism</span>
-                <span data-lang="ru">Перейти в Telegram</span>
-                <span data-lang="en">Become a Telegram</span>
-            </a>
-            <a href="" class="styled-button secondary">
-                <span class="material-symbols-outlined button-icon">share</span>
-                <span data-lang="ru">Поделиться с друзьями</span>
-                <span data-lang="en">Share with Friends</span>
+<!-- Секция поддержки авторов -->
+<section class="support-section">
+    <h2 class="support-title" data-lang="ru">Поддержите создателей</h2>
+    <h2 class="support-title" data-lang="en">Support the Creators</h2>
+    <p class="support-text" data-lang="ru">Если вам нравится наш проект Shark, вы можете поддержать нас. Так сайт станет более функциональным, и его релиз будет быстрее!</p>
+    <p class="support-text" data-lang="en">If you like our project Shark, then you can support us. This way the site will be more functional and its release will be faster!</p>
+    <div class="support-options">
+        <div class="button-container">
+            <span class="new-badge" data-lang="ru">Новое!</span>
+            <span class="new-badge" data-lang="en">New!</span>
+            <a href="donat.html" class="styled-button accent">
+                <span class="material-symbols-outlined button-icon">favorite</span>
+                <span data-lang="ru">Пожертвовать</span>
+                <span data-lang="en">Donate</span>
             </a>
         </div>
-    </section>
+        <a href="https://t.me/sharkNewsFea" target="_blank" class="styled-button secondary">
+            <span class="material-symbols-outlined button-icon">volunteer_activism</span>
+            <span data-lang="ru">Перейти в Telegram</span>
+            <span data-lang="en">Become a Telegram</span>
+        </a>
+        <!-- Обновленная кнопка поделиться -->
+        <button class="styled-button secondary" id="share-button">
+            <span class="material-symbols-outlined button-icon">share</span>
+            <span data-lang="ru">Поделиться с друзьями</span>
+            <span data-lang="en">Share with Friends</span>
+        </button>
+    </div>
+</section>
+
+<!-- Простое уведомление о копировании -->
+<div class="copy-notification" id="copy-notification">
+    <span class="material-symbols-outlined">check</span>
+    <span data-lang="ru">Ссылка скопирована!</span>
+    <span data-lang="en">Link copied!</span>
+</div>
 
     <!--Футер-->
     <footer class="footer">
@@ -693,6 +701,52 @@
             // Обновляем текст кнопок анимаций при загрузке
             updateAnimationsButton();
         });
+        // Функционал для копирования ссылки
+const shareButton = document.getElementById('share-button');
+const copyNotification = document.getElementById('copy-notification');
+
+// Функция показа уведомления
+function showCopyNotification() {
+    // Сначала скрываем, если уже показывается
+    copyNotification.classList.remove('active', 'hiding');
+    
+    // Показываем уведомление
+    setTimeout(() => {
+        copyNotification.classList.add('active');
+    }, 10);
+    
+    // Скрываем через 2 секунды с анимацией
+    setTimeout(() => {
+        copyNotification.classList.add('hiding');
+        setTimeout(() => {
+            copyNotification.classList.remove('active', 'hiding');
+        }, 300);
+    }, 2000);
+}
+
+// Обработчик клика на кнопку поделиться
+if (shareButton) {
+    shareButton.addEventListener('click', async () => {
+        const currentUrl = window.location.href;
+        
+        try {
+            // Пробуем использовать современный API
+            await navigator.clipboard.writeText(currentUrl);
+            showCopyNotification();
+        } catch (err) {
+            // Fallback для старых браузеров
+            const textArea = document.createElement('textarea');
+            textArea.value = currentUrl;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showCopyNotification();
+        }
+    });
+}
     </script>
 </body>
 </html>
